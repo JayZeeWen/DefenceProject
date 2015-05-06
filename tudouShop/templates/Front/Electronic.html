@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="css/dzcp.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        <!--
+        .STYLE1 {
+            color: #FFFFFF;
+        }
+
+        .STYLE2 {
+            font-family: "微软雅黑";
+        }
+
+        .STYLE3 {
+            color: #FFFFFF;
+            position: relative;
+        }
+        -->
+    </style>
+</head>
+
+<body>
+    <div class="shang">
+        <span class="zi1">ANRUI International</span>
+        <div class="dh">
+            <ul>
+                <li><a href="index.ashx">首页</a> </li>
+                <li><a href="male.ashx">男士</a> </li>
+                <li><a href="female.ashx">女士</a> </li>
+                <li><a href="Electronic.ashx">电子产品</a> </li>
+                <li><a href="Luxury.ashx">奢移品</a> </li>
+                <li><a href="Brand.ashx">品牌</a></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+
+        <div class="daright">
+            <ul>
+                <li><a href="aspx/login.aspx">登录</a><span> </span></li>
+                <li><a href="aspx/register.aspx">注册</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="da">
+
+        <div id="zhong">
+            <div class="tu1">
+                <img src="images/广告图/5.png" width="1190" height="530" /></div>
+        </div>
+        <div class="tu2">
+            <img src="images/广告图/7.jpg" width="300" height="150" class="tu2a" /><img src="images/广告图/9.jpg" width="300" height="150" class="tu2a" /><img src="images/广告图/10.jpg" width="300" height="150" class="tu2a" /><img src="images/广告图/8.jpg" width="300" height="150" class="tu2a" />
+        </div>
+    </div>
+    </div><!--zhong-->
+
+    <div id="zhong2">
+        <ul>
+            #foreach($logo in $Model.logos)
+            <li><img alt="" src="$logo.BraLogo" width="150" height="76" class="tu3a" /></li>
+            #end
+           
+        </ul>
+
+        <!--zhong2-->
+        #set($i = 0)
+        <div id="zhong3">
+            #foreach($ep in $Model.Eps)
+                #if($i == 0)
+                <div id="tu4" >
+                #else
+                <div id="tu4" class="tu4b">
+                #end
+                    <img src="$ep.Img" width="350" height="350" class="tu4a" />
+                    <p class="zi3">$ep.ProName</p>
+                    <p class="zi4">超值价：$ep.Price<span class="zi5"></span>元</p>
+                    <p class="zi6">原价：$ep.Price元</p>
+                    <p class="zi7"><a href="sp.html"><a href="sp.html">立即抢购</a></p>
+                </div>
+                    #set($i = $i +1 )
+                
+            #end
+        </div>
+        <!--zhong3-->
+
+        <div id="zhong4">
+            <div id="zuo">
+                <div class="zs">
+                    <img src="$Model.left1.Img" width="100%" height="150" class="tu7" /><span class="zi8">点此选购</span>
+                </div>
+                <!--zs-->
+                <div class="zx">
+
+                    <div id="tu8">
+                        <img src="$Model.left2.Img" width="350" height="350" class="tu8a" />
+                        <span class="zi9 STYLE1 STYLE2"><span class="STYLE3">$Model.left2.ProName</span></span><span class="zi10">$Model.left2.Price</span>
+                    </div>
+
+
+                    <div id="tu8">
+                        <img src="$Model.left3.Img" width="350" height="350" class="tu8a" />
+                        <span class="zi9 STYLE1 STYLE2"><span class="STYLE3"></span>$Model.left3.ProName</span><span class="zi10">$Model.left3.Price</span>
+                    </div>
+                </div>
+                <!--zx-->
+            </div>
+            <!--zuo-->
+
+            <div class="youa">
+                <img src="$Model.rightPro.Img" width="99%" height="545" class="tu9" />
+                <span class="zi11 STYLE1 STYLE2"><span class="STYLE3">$Model.rightPro.ProName</span></span><span class="zi10">$Model.rightPro.Price</span>
+            </div>
+            <!--you-->
+
+        </div>
+        <!--zhong4-->
+        <h3 class="zi12">明星产品</h3>
+        <div id="zhong5">
+            <ul>
+                #foreach($hot in $Model.hots)
+                 <li><a href="detials.aspx?ProID=$hot.ProID"><img src="$hot.Img" class="tu30" /></a></li>
+                #end
+            </ul>
+        </div>
+        <!--zhong5-->
+
+
+        <div id="zhong6">
+            <h3 class="zi17">购物导航</h3>
+
+            <div class="dixia">
+                <ul>
+                    <li>手机</li>
+                    <li>电脑</li>
+                    <li>家电</li>
+                    <li>数码</li>
+                </ul>
+            </div>
+        </div>
+        <div id="zuixia">
+
+            <div class="tu6">
+                <img src="images/广告图/12.png" width="415" height="105" class="tu14" /></div>
+        </div>
+    </div>
+    <!--da-->
+</body>
+</html>

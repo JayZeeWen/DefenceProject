@@ -1,0 +1,373 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+margin:0px;
+padding:0px;
+}
+
+
+
+.shang{
+width:100%;
+height:25px;
+border-bottom:#666666 2px solid;
+
+}
+
+.zi1{
+	float:left;
+	font-size:15px;
+	color:#FFFFFF;
+	margin-left:3%;
+	line-height:25px;
+	font-weight: bolder;
+}
+
+
+.dh{
+	
+	padding: 0.1em 0;
+	padding-left:13%;
+	padding-top:2px;
+		float:left;
+	margin:auto;
+}
+
+.dh ul li{
+	display:inline-block;
+}
+
+.dh ul li a{
+	color: #FFF;
+	margin-right:25px;
+	text-decoration:none;
+	font-size:16px;
+	font-family:"微软雅黑";
+}
+
+.daright{	float: right;
+padding-right:5%;
+padding-top:3px;
+}
+.daright ul li{
+	display:inline-block;
+	margin-left:10px;
+	
+	}
+
+.daright ul li a{
+	color: #FFF;
+	font-size:13px;
+	text-transform: uppercase;
+	text-decoration:none;
+	font-family:"微软雅黑";}
+
+
+
+#da{
+width:88%;
+height:3380px;
+position:absolute;
+margin-left:6%;
+}
+
+#zhong{
+	width:100%;
+	height: 410px;
+	position: absolute;
+	top:1px;
+	left:-80px;
+}
+
+.tu1{
+width:100%;
+height:410px;
+left:px;
+}
+
+.tu2{
+width:100%;
+height:115px;
+
+position:absolute;
+top:521px;
+}
+
+#zhong2{
+width:80%;
+height:500px;
+
+position:absolute;
+top:702px;
+left:10%;
+}
+
+#a1{
+width:20%;
+height:500px;
+float:left;
+}
+
+
+.zi4{
+	width:100%;
+	height:35px;
+	font-size:14px;
+	padding-left:30px;
+	line-height:35px;
+	font-weight: bold;
+	background-color:#333333;
+	color:#CCCCCC;
+}
+
+.zi4:hover{
+background-color:#CCCCCC;
+color:#000000;
+}
+
+.zi101{
+	width:87%;
+	height:35px;
+	color:#FFFFFF;
+	font-size:14px;
+	padding-left:30px;
+	line-height:35px;
+	font-weight: bold;
+	background-color:#999999;
+}
+
+.zi101:hover{
+	background-color:#B2B2B2;
+	color:#666666;
+}
+
+.zi102{
+width:287%;
+height:35px;
+background-color:#003399;
+color:#333333;
+font-size:14px;
+padding-left:30px;
+line-height:35px;
+font-weight: bold;
+background-color:#CCCCCC;
+}
+
+.zi102:hover{
+background-color:#6A6A6A;
+color:#CCCCCC;
+}
+
+
+
+.tu3{
+width:100%;
+height:370px;
+
+}
+.tu31{
+width:100%;
+height:370px;
+margin-top:35px;
+
+}
+
+.logo1{
+width:100%;
+height:95px;
+
+}
+
+
+
+.zi5{
+width:85.5%;
+	height:35px;
+	background-color:#CCCCCC;
+	color:#000000;
+	font-size:14px;
+	padding-left:30px;
+	line-height:35px;
+	font-weight: bold;
+
+}
+
+
+.zi7{
+position: absolute;
+color:#FFFFFF;
+top:1225px;
+left:12%;
+font-size:22px;
+}
+
+
+#di{
+	width: 80%;
+	height: 560px;
+	position: absolute;
+	top: 1260px;
+	left:10%;
+	background-color:#006633;
+}
+
+
+
+.zs{
+width:45%;
+height:410px;
+background-color:#00CCCC;
+}
+
+.tu5{
+width:100%;
+height:560px;
+background-color:#99CCCC;
+}
+
+.zi3{
+	margin-left:25px;
+	font-size:16px;
+	line-height:48px;
+	color:#FFFFFF;
+	font-family: "华康少女文字W5(P)";
+}
+
+.ys{
+width:59.5%;
+height:280px;
+position:relative;
+top:-340px;
+left:45%;
+margin-top:-70px;
+}
+
+
+#hehe{
+width:30.8%;
+height:280px;
+background-color:#FFFFFF;
+float:left;
+border-bottom:#FF0000 1px solid;
+border-right:#FF0000 1px  solid;
+}
+
+
+.bk2{
+border-right:0px;
+}
+
+.bk3{
+}
+
+
+.he1{
+width:100%;
+height:180px;
+}
+
+.zi11{
+	font-size:18px;
+	font-weight: bold;
+	margin-left:30px;
+	margin-top:30px;
+}
+
+.zi12{
+font-size:13px;
+margin-left:30px;
+color:#666666;
+}
+
+#zi13{
+position:relative;
+left:60%;
+top:-15px;
+font-size:10px;
+
+}
+
+.zi14{
+color:#FF3300;
+}
+
+
+.zi8{
+position: absolute;
+color:#FFFFFF;
+top:1845px;
+left:12%;
+font-size:22px;
+}
+
+
+#di2{
+	width: 80%;
+	height: 560px;
+	position: absolute;
+	top: 1880px;
+	left:10%;
+	background-color:#006633;
+	}
+
+
+
+
+.zi9{
+position: absolute;
+color:#FFFFFF;
+top:2465px;
+left:12%;
+font-size:22px;
+}
+
+#di3{
+	width: 80%;
+	height: 560px;
+	position: absolute;
+	top:2500px;
+	left:10%;
+	background-color:#006633;
+	}
+
+
+
+
+#zuidi{
+width:80%;
+height:180px;
+background-color:#FFFFFF;
+position:absolute;
+top:3090px;
+left:10%;
+border-radius:5px;
+}
+
+.tubiao1{
+background-image:url(../images/tubiao1.png);
+background-repeat: no-repeat;
+}
+
+.zi10{
+margin-left:20%;
+line-height:30px;
+}
+
+
+.c1{
+width:15.25%;
+height:160px;
+float:left;
+padding-top:20px;
+padding-left:40px;
+
+
+}
+
+.zi6{
+	margin-left:21%;
+	font-size:14px;
+	line-height:25px;
+	text-decoration: none;
+}

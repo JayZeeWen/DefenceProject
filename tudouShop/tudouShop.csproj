@@ -1,0 +1,1202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35AB0FCA-99E3-41A9-8418-A99B54236D8A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tudouShop</RootNamespace>
+    <AssemblyName>tudouShop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxPro.2, Version=6.10.6.2, Culture=neutral, PublicKeyToken=f19d80cec1ceaeb9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxPro.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FineUI, Version=4.1.6.0, Culture=neutral, PublicKeyToken=0ff1835d01c384a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FineUI.4.1.6\lib\FineUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NVelocity, Version=1.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminLogin.aspx" />
+    <Content Include="Admin\ProductList.aspx" />
+    <Content Include="aspx\Login.aspx" />
+    <Content Include="aspx\Register.aspx" />
+    <Content Include="aspx\UserEmailCheck.aspx" />
+    <Content Include="CheckOut.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap2.css" />
+    <Content Include="css\dzcp.css" />
+    <Content Include="css\gouwuche.css" />
+    <Content Include="css\gouwuchexin.css" />
+    <Content Include="css\grid.css" />
+    <Content Include="css\gwc.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\nanshi.css" />
+    <Content Include="css\nvshi.css" />
+    <Content Include="css\pinpai.css" />
+    <Content Include="css\shanpin.css" />
+    <Content Include="css\sp.css" />
+    <Content Include="css\sp2.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\syp.css" />
+    <Content Include="css\syp2.css" />
+    <Content Include="css\tjgwc.css" />
+    <Content Include="css\tjgwc1.css" />
+    <Content Include="css\zc.css" />
+    <Content Include="css\zhuanchang.css" />
+    <Content Include="css\zhuanchang2.css" />
+    <Content Include="Detials.aspx" />
+    <Content Include="images\1.png" />
+    <Content Include="images\2.png" />
+    <Content Include="images\3.png" />
+    <Content Include="images\4.png" />
+    <Content Include="images\404.png" />
+    <Content Include="images\arrowbg.png" />
+    <Content Include="images\bg-slide.png" />
+    <Content Include="images\dzcp\1.jpg" />
+    <Content Include="images\dzcp\1.png" />
+    <Content Include="images\dzcp\2.jpg" />
+    <Content Include="images\dzcp\2.png" />
+    <Content Include="images\dzcp\20140928095852_41160.jpg" />
+    <Content Include="images\dzcp\20140928095955_85319.jpg" />
+    <Content Include="images\dzcp\20140928100025_33269.jpg" />
+    <Content Include="images\dzcp\20140928100128_20226.jpg" />
+    <Content Include="images\dzcp\20140930153340_34419.jpg" />
+    <Content Include="images\dzcp\20140930161513_57544.jpg" />
+    <Content Include="images\dzcp\20140930161832_46904.jpg" />
+    <Content Include="images\dzcp\20140930162129_71583.jpg" />
+    <Content Include="images\dzcp\20140930162208_25954.jpg" />
+    <Content Include="images\dzcp\20140930162314_14875.jpg" />
+    <Content Include="images\dzcp\20140930162423_40809.jpg" />
+    <Content Include="images\dzcp\20140930162458_67825.jpg" />
+    <Content Include="images\dzcp\5641.jpg" />
+    <Content Include="images\dzcp\dzcp\1.jpg" />
+    <Content Include="images\dzcp\dzcp\1.png" />
+    <Content Include="images\dzcp\dzcp\13.jpg" />
+    <Content Include="images\dzcp\dzcp\2.jpg" />
+    <Content Include="images\dzcp\dzcp\2.png" />
+    <Content Include="images\dzcp\dzcp\20140928095852_41160.jpg" />
+    <Content Include="images\dzcp\dzcp\20140928095955_85319.jpg" />
+    <Content Include="images\dzcp\dzcp\20140928100025_33269.jpg" />
+    <Content Include="images\dzcp\dzcp\20140928100128_20226.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930153340_34419.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930161513_57544.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930161832_46904.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930162129_71583.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930162208_25954.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930162314_14875.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930162423_40809.jpg" />
+    <Content Include="images\dzcp\dzcp\20140930162458_67825.jpg" />
+    <Content Include="images\dzcp\dzcp\44876.jpg" />
+    <Content Include="images\dzcp\dzcp\45320.jpg" />
+    <Content Include="images\dzcp\dzcp\456.jpg" />
+    <Content Include="images\dzcp\dzcp\45645.jpg" />
+    <Content Include="images\dzcp\dzcp\495926.jpg" />
+    <Content Include="images\dzcp\dzcp\5136154.jpg" />
+    <Content Include="images\dzcp\dzcp\5163.jpg" />
+    <Content Include="images\dzcp\dzcp\541.jpg" />
+    <Content Include="images\dzcp\dzcp\5641.jpg" />
+    <Content Include="images\dzcp\dzcp\56415.jpg" />
+    <Content Include="images\dzcp\dzcp\5644156.jpg" />
+    <Content Include="images\dzcp\dzcp\653.jpg" />
+    <Content Include="images\dzcp\dzcp\786.jpg" />
+    <Content Include="images\dzcp\dzcp\78635.jpg" />
+    <Content Include="images\dzcp\dzcp\8162.jpg" />
+    <Content Include="images\dzcp\dzcp\849+.jpg" />
+    <Content Include="images\dzcp\dzcp\8941.jpg" />
+    <Content Include="images\dzcp\dzcp\89453.jpg" />
+    <Content Include="images\dzcp\dzcp\9+634.jpg" />
+    <Content Include="images\dzcp\dzcp\9812.jpg" />
+    <Content Include="images\dzcp\dzcp\9849.jpg" />
+    <Content Include="images\dzcp\dzcp\99516.jpg" />
+    <Content Include="images\dzcp\dzcp\sad.jpg" />
+    <Content Include="images\dzcp\LOGO\1.jpg" />
+    <Content Include="images\dzcp\LOGO\10.jpg" />
+    <Content Include="images\dzcp\LOGO\11.jpg" />
+    <Content Include="images\dzcp\LOGO\12.jpg" />
+    <Content Include="images\dzcp\LOGO\13.jpg" />
+    <Content Include="images\dzcp\LOGO\14.jpg" />
+    <Content Include="images\dzcp\LOGO\15.jpg" />
+    <Content Include="images\dzcp\LOGO\16.jpg" />
+    <Content Include="images\dzcp\LOGO\2.jpg" />
+    <Content Include="images\dzcp\LOGO\3.jpg" />
+    <Content Include="images\dzcp\LOGO\4.jpg" />
+    <Content Include="images\dzcp\LOGO\5.jpg" />
+    <Content Include="images\dzcp\LOGO\6.jpg" />
+    <Content Include="images\dzcp\LOGO\7.jpg" />
+    <Content Include="images\dzcp\LOGO\8.jpg" />
+    <Content Include="images\dzcp\LOGO\9.jpg" />
+    <Content Include="images\guangao\1.jpg" />
+    <Content Include="images\guangao\10.jpg" />
+    <Content Include="images\guangao\11.jpg" />
+    <Content Include="images\guangao\12.jpg" />
+    <Content Include="images\guangao\12.png" />
+    <Content Include="images\guangao\13.jpg" />
+    <Content Include="images\guangao\14.jpg" />
+    <Content Include="images\guangao\15.jpg" />
+    <Content Include="images\guangao\16.jpg" />
+    <Content Include="images\guangao\17.jpg" />
+    <Content Include="images\guangao\18.jpg" />
+    <Content Include="images\guangao\19.jpg" />
+    <Content Include="images\guangao\2.jpg" />
+    <Content Include="images\guangao\2.png" />
+    <Content Include="images\guangao\20.jpg" />
+    <Content Include="images\guangao\21.jpg" />
+    <Content Include="images\guangao\22.jpg" />
+    <Content Include="images\guangao\23.jpg" />
+    <Content Include="images\guangao\24.jpg" />
+    <Content Include="images\guangao\25.jpg" />
+    <Content Include="images\guangao\26.jpg" />
+    <Content Include="images\guangao\27.jpg" />
+    <Content Include="images\guangao\28.jpg" />
+    <Content Include="images\guangao\29.jpg" />
+    <Content Include="images\guangao\3.jpg" />
+    <Content Include="images\guangao\3.png" />
+    <Content Include="images\guangao\30.jpg" />
+    <Content Include="images\guangao\31.jpg" />
+    <Content Include="images\guangao\32.jpg" />
+    <Content Include="images\guangao\33.jpg" />
+    <Content Include="images\guangao\34.jpg" />
+    <Content Include="images\guangao\35.jpg" />
+    <Content Include="images\guangao\36.jpg" />
+    <Content Include="images\guangao\37.jpg" />
+    <Content Include="images\guangao\38.jpg" />
+    <Content Include="images\guangao\39.jpg" />
+    <Content Include="images\guangao\4.jpg" />
+    <Content Include="images\guangao\40.jpg" />
+    <Content Include="images\guangao\41.jpg" />
+    <Content Include="images\guangao\42.jpg" />
+    <Content Include="images\guangao\43.jpg" />
+    <Content Include="images\guangao\44.jpg" />
+    <Content Include="images\guangao\45.jpg" />
+    <Content Include="images\guangao\46.jpg" />
+    <Content Include="images\guangao\47.jpg" />
+    <Content Include="images\guangao\48.jpg" />
+    <Content Include="images\guangao\49.jpg" />
+    <Content Include="images\guangao\5.jpg" />
+    <Content Include="images\guangao\5.png" />
+    <Content Include="images\guangao\50.jpg" />
+    <Content Include="images\guangao\6.jpg" />
+    <Content Include="images\guangao\7.jpg" />
+    <Content Include="images\guangao\8.jpg" />
+    <Content Include="images\guangao\9.jpg" />
+    <Content Include="images\guangao\brand.png" />
+    <Content Include="images\guangao\brand_2.png" />
+    <Content Include="images\guangao\brand_3.png" />
+    <Content Include="images\guangao\brand_4.png" />
+    <Content Include="images\guangao\brand_5.png" />
+    <Content Include="images\guangao\brand_lv_1.png" />
+    <Content Include="images\guangao\brand_lv_2.png" />
+    <Content Include="images\guangao\brand_lv_3.png" />
+    <Content Include="images\guangao\brand_lv_4.png" />
+    <Content Include="images\guangao\brand_lv_5.png" />
+    <Content Include="images\guangao\首页轮播1.png" />
+    <Content Include="images\guangao\首页轮播2.png" />
+    <Content Include="images\guangao\首页轮播3.png" />
+    <Content Include="images\guangao\首页轮播4.jpg" />
+    <Content Include="images\guangao\首页轮播5.jpg" />
+    <Content Include="images\jietu1.png" />
+    <Content Include="images\leftarrow.gif" />
+    <Content Include="images\leftshadow.png" />
+    <Content Include="images\left_ar.png" />
+    <Content Include="images\logo1.png" />
+    <Content Include="images\lunbo\20140907090130_79388.jpg" />
+    <Content Include="images\lunbo\20140907094736_98413.jpg" />
+    <Content Include="images\lunbo\20140929154024_61776.png" />
+    <Content Include="images\lunbo\20140929155108_48194.png" />
+    <Content Include="images\lunbo\20140929155238_78628.png" />
+    <Content Include="images\lunbo\20140929160506_24480.png" />
+    <Content Include="images\lunbo\20140929160814_60794.png" />
+    <Content Include="images\lunbo\20140929161124_42892.png" />
+    <Content Include="images\lunbo\20140929161409_87454.png" />
+    <Content Include="images\lunbo\20140929162437_39329.png" />
+    <Content Include="images\lunbo\20140929162724_85838.png" />
+    <Content Include="images\lunbo\20140929163205_63220.png" />
+    <Content Include="images\lunbo\20140929181347_88625.png" />
+    <Content Include="images\lunbo\20140929182614_77868.png" />
+    <Content Include="images\lunbo\20140929183905_10492.png" />
+    <Content Include="images\lunbo\20140929184017_66355.png" />
+    <Content Include="images\lunbo\20140929201455_12082.jpg" />
+    <Content Include="images\lunbo\20140929202848_98510.jpg" />
+    <Content Include="images\lunbo\20140929214551_31274 %281%29.png" />
+    <Content Include="images\lunbo\20140929214551_31274.png" />
+    <Content Include="images\lunbo\20140930095018_59378.jpg" />
+    <Content Include="images\lunbo\20140930144805_99624.jpg" />
+    <Content Include="images\lunbo\20141017150009_87293.png" />
+    <Content Include="images\lunbo\20141017150904_54036.png" />
+    <Content Include="images\lunbo\brand_hot.jpg" />
+    <Content Include="images\lunbo\brand_hot_10.jpg" />
+    <Content Include="images\lunbo\brand_hot_11.jpg" />
+    <Content Include="images\lunbo\brand_hot_12.jpg" />
+    <Content Include="images\lunbo\brand_hot_13.jpg" />
+    <Content Include="images\lunbo\brand_hot_14.jpg" />
+    <Content Include="images\lunbo\brand_hot_2.jpg" />
+    <Content Include="images\lunbo\brand_hot_3.jpg" />
+    <Content Include="images\lunbo\brand_hot_4.jpg" />
+    <Content Include="images\lunbo\brand_hot_5.jpg" />
+    <Content Include="images\lunbo\brand_hot_6.jpg" />
+    <Content Include="images\lunbo\brand_hot_7.jpg" />
+    <Content Include="images\lunbo\brand_hot_8.jpg" />
+    <Content Include="images\lunbo\brand_hot_9.jpg" />
+    <Content Include="images\lunbo\electronics_ad_2.jpg" />
+    <Content Include="images\lunbo\electronics_ad_3.jpg" />
+    <Content Include="images\lunbo\electronics_ad_4.jpg" />
+    <Content Include="images\movingboxes.png" />
+    <Content Include="images\nanshi\20140930155900_19581.jpg" />
+    <Content Include="images\nanshi\20140930163538_83141.jpg" />
+    <Content Include="images\nanshi\20140930163716_88163.jpg" />
+    <Content Include="images\nanshi\20140930163801_81422.jpg" />
+    <Content Include="images\nanshi\3.jpg" />
+    <Content Include="images\nanshi\nanshi\1520.jpg" />
+    <Content Include="images\nanshi\nanshi\20140930155900_19581.jpg" />
+    <Content Include="images\nanshi\nanshi\20140930163538_83141.jpg" />
+    <Content Include="images\nanshi\nanshi\20140930163716_88163.jpg" />
+    <Content Include="images\nanshi\nanshi\20140930163801_81422.jpg" />
+    <Content Include="images\nanshi\nanshi\213.jpg" />
+    <Content Include="images\nanshi\nanshi\3.jpg" />
+    <Content Include="images\nanshi\nanshi\415.jpg" />
+    <Content Include="images\nanshi\nanshi\416.jpg" />
+    <Content Include="images\nanshi\nanshi\45.jpg" />
+    <Content Include="images\nanshi\nanshi\4926.jpg" />
+    <Content Include="images\nanshi\nanshi\49651.jpg" />
+    <Content Include="images\nanshi\nanshi\49865.jpg" />
+    <Content Include="images\nanshi\nanshi\56.jpg" />
+    <Content Include="images\nanshi\nanshi\56123.jpg" />
+    <Content Include="images\nanshi\nanshi\591.jpg" />
+    <Content Include="images\nanshi\nanshi\789+2.jpg" />
+    <Content Include="images\nanshi\nanshi\789.jpg" />
+    <Content Include="images\nanshi\nanshi\78961.jpg" />
+    <Content Include="images\nanshi\nanshi\846.jpg" />
+    <Content Include="images\nanshi\nanshi\8492.jpg" />
+    <Content Include="images\nanshi\nanshi\86513.jpg" />
+    <Content Include="images\nanshi\nanshi\89.jpg" />
+    <Content Include="images\nanshi\nanshi\916.jpg" />
+    <Content Include="images\nanshi\nanshi\9265.jpg" />
+    <Content Include="images\NOTE3\1.jpg" />
+    <Content Include="images\NOTE3\20140929161159_10461.jpg" />
+    <Content Include="images\NOTE3\20140929161200_40792.jpg" />
+    <Content Include="images\NOTE3\20140929161202_57782.jpg" />
+    <Content Include="images\NOTE3\20140929161203_16152.jpg" />
+    <Content Include="images\NOTE3\20140929161205_54762.jpg" />
+    <Content Include="images\NOTE3\20140929161207_64004.jpg" />
+    <Content Include="images\NOTE3\20140929161209_20996.jpg" />
+    <Content Include="images\NOTE3\20140929161211_93439.jpg" />
+    <Content Include="images\NOTE3\20140929161213_16654.jpg" />
+    <Content Include="images\NOTE3\20140929161214_14333.jpg" />
+    <Content Include="images\NOTE3\20140929161216_20897.jpg" />
+    <Content Include="images\NOTE3\20140929161218_75855.jpg" />
+    <Content Include="images\NOTE3\20140929161219_18887 %281%29.jpg" />
+    <Content Include="images\NOTE3\20140929161219_18887.jpg" />
+    <Content Include="images\NOTE3\20140929161222_72388.jpg" />
+    <Content Include="images\NOTE3\20140929161224_90453.jpg" />
+    <Content Include="images\num_grey.png" />
+    <Content Include="images\num_red.png" />
+    <Content Include="images\nvshi\20140930155610_85009.jpg" />
+    <Content Include="images\nvshi\20140930162810_36430.jpg" />
+    <Content Include="images\nvshi\20140930162928_32447.jpg" />
+    <Content Include="images\nvshi\20140930163024_59157.jpg" />
+    <Content Include="images\nvshi\20140930163232_24692.jpg" />
+    <Content Include="images\nvshi\916.jpg" />
+    <Content Include="images\pinpai\20141029092910_58364.jpg" />
+    <Content Include="images\pinpai\20141029093017_24050.jpg" />
+    <Content Include="images\pinpai\20141029093040_98474.jpg" />
+    <Content Include="images\pinpai\20141029094327_54870.jpg" />
+    <Content Include="images\pinpai\20141029094344_63667.jpg" />
+    <Content Include="images\pinpai\20141029094358_64000.jpg" />
+    <Content Include="images\pinpai\20141029094439_57098.jpg" />
+    <Content Include="images\pinpai\20141029094535_52704.jpg" />
+    <Content Include="images\pinpai\20141029094555_10135.jpg" />
+    <Content Include="images\pinpai\20141029094609_46594.jpg" />
+    <Content Include="images\pinpai\20141029094631_15907.jpg" />
+    <Content Include="images\pinpai\20141029094649_63533.jpg" />
+    <Content Include="images\pinpai\20141029094704_79785.jpg" />
+    <Content Include="images\pinpai\20141029094719_82634.jpg" />
+    <Content Include="images\pinpai\20141029094734_71040.jpg" />
+    <Content Include="images\pinpai\20141029094751_60437.jpg" />
+    <Content Include="images\pinpai\20141029094811_75872.jpg" />
+    <Content Include="images\pinpai\20141029094849_99199.jpg" />
+    <Content Include="images\pinpai\20141029094942_96716.jpg" />
+    <Content Include="images\pinpai\20141029101610_15656.jpg" />
+    <Content Include="images\pinpai\20141029104211_77976.jpg" />
+    <Content Include="images\pricebg.gif" />
+    <Content Include="images\rightarrow.gif" />
+    <Content Include="images\rightshadow.png" />
+    <Content Include="images\right_ar.png" />
+    <Content Include="images\sheship\20140930153649_61772.jpg" />
+    <Content Include="images\sheship\20140930162543_13586.jpg" />
+    <Content Include="images\sheship\20140930162637_84944.jpg" />
+    <Content Include="images\sheship\20140930162721_86035.jpg" />
+    <Content Include="images\sheship\20140930171427_22208.jpg" />
+    <Content Include="images\title.gif" />
+    <Content Include="images\tu4a.png" />
+    <Content Include="images\tu5.png" />
+    <Content Include="images\tu6.png" />
+    <Content Include="images\tu7a.png" />
+    <Content Include="images\tu8.png" />
+    <Content Include="images\tubiao1.png" />
+    <Content Include="images\zuo1.png" />
+    <Content Include="images\准确广告图\+423.jpg" />
+    <Content Include="images\准确广告图\1.jpg" />
+    <Content Include="images\准确广告图\10.jpg" />
+    <Content Include="images\准确广告图\11.png" />
+    <Content Include="images\准确广告图\12.jpg" />
+    <Content Include="images\准确广告图\12.png" />
+    <Content Include="images\准确广告图\13.jpg" />
+    <Content Include="images\准确广告图\14.jpg" />
+    <Content Include="images\准确广告图\15.jpg" />
+    <Content Include="images\准确广告图\18.jpg" />
+    <Content Include="images\准确广告图\19.jpg" />
+    <Content Include="images\准确广告图\2.jpg" />
+    <Content Include="images\准确广告图\20.jpg" />
+    <Content Include="images\准确广告图\21.jpg" />
+    <Content Include="images\准确广告图\22.jpg" />
+    <Content Include="images\准确广告图\23.jpg" />
+    <Content Include="images\准确广告图\2310.jpg" />
+    <Content Include="images\准确广告图\24.jpg" />
+    <Content Include="images\准确广告图\25.jpg" />
+    <Content Include="images\准确广告图\26.jpg" />
+    <Content Include="images\准确广告图\27.jpg" />
+    <Content Include="images\准确广告图\28.jpg" />
+    <Content Include="images\准确广告图\29.jpg" />
+    <Content Include="images\准确广告图\30.jpg" />
+    <Content Include="images\准确广告图\31.jpg" />
+    <Content Include="images\准确广告图\32.jpg" />
+    <Content Include="images\准确广告图\32.png" />
+    <Content Include="images\准确广告图\33.jpg" />
+    <Content Include="images\准确广告图\34.jpg" />
+    <Content Include="images\准确广告图\35.jpg" />
+    <Content Include="images\准确广告图\36.jpg" />
+    <Content Include="images\准确广告图\37.jpg" />
+    <Content Include="images\准确广告图\38.jpg" />
+    <Content Include="images\准确广告图\39.jpg" />
+    <Content Include="images\准确广告图\4.jpg" />
+    <Content Include="images\准确广告图\40.jpg" />
+    <Content Include="images\准确广告图\41.jpg" />
+    <Content Include="images\准确广告图\4120.jpg" />
+    <Content Include="images\准确广告图\42.jpg" />
+    <Content Include="images\准确广告图\4242.jpg" />
+    <Content Include="images\准确广告图\43.jpg" />
+    <Content Include="images\准确广告图\44.jpg" />
+    <Content Include="images\准确广告图\45.jpg" />
+    <Content Include="images\准确广告图\4512.jpg" />
+    <Content Include="images\准确广告图\46.jpg" />
+    <Content Include="images\准确广告图\47.jpg" />
+    <Content Include="images\准确广告图\48.jpg" />
+    <Content Include="images\准确广告图\49.jpg" />
+    <Content Include="images\准确广告图\5.png" />
+    <Content Include="images\准确广告图\50.jpg" />
+    <Content Include="images\准确广告图\5241.jpg" />
+    <Content Include="images\准确广告图\5421.jpg" />
+    <Content Include="images\准确广告图\5431.jpg" />
+    <Content Include="images\准确广告图\55.jpg" />
+    <Content Include="images\准确广告图\560.jpg" />
+    <Content Include="images\准确广告图\564.jpg" />
+    <Content Include="images\准确广告图\6.jpg" />
+    <Content Include="images\准确广告图\65.png" />
+    <Content Include="images\准确广告图\68541.jpg" />
+    <Content Include="images\准确广告图\7.jpg" />
+    <Content Include="images\准确广告图\795.jpg" />
+    <Content Include="images\准确广告图\799.jpg" />
+    <Content Include="images\准确广告图\8.jpg" />
+    <Content Include="images\准确广告图\855.jpg" />
+    <Content Include="images\准确广告图\85632412.jpg" />
+    <Content Include="images\准确广告图\87.jpg" />
+    <Content Include="images\准确广告图\8899.jpg" />
+    <Content Include="images\准确广告图\9.jpg" />
+    <Content Include="images\准确广告图\910.jpg" />
+    <Content Include="images\准确广告图\94561.jpg" />
+    <Content Include="images\准确广告图\95022.jpg" />
+    <Content Include="images\准确广告图\9550.jpg" />
+    <Content Include="images\准确广告图\98.jpg" />
+    <Content Include="images\准确广告图\98325.jpg" />
+    <Content Include="images\准确广告图\988.jpg" />
+    <Content Include="images\准确广告图\brand.png" />
+    <Content Include="images\准确广告图\brand_2.png" />
+    <Content Include="images\准确广告图\brand_3.png" />
+    <Content Include="images\准确广告图\brand_4.png" />
+    <Content Include="images\准确广告图\brand_5.png" />
+    <Content Include="images\准确广告图\brand_lv_1.png" />
+    <Content Include="images\准确广告图\brand_lv_2.png" />
+    <Content Include="images\准确广告图\brand_lv_3.png" />
+    <Content Include="images\准确广告图\brand_lv_4.png" />
+    <Content Include="images\准确广告图\brand_lv_5.png" />
+    <Content Include="images\准确广告图\首页轮播1.png" />
+    <Content Include="images\准确广告图\首页轮播2.png" />
+    <Content Include="images\准确广告图\首页轮播3.png" />
+    <Content Include="images\准确广告图\首页轮播4.jpg" />
+    <Content Include="images\准确广告图\首页轮播5.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029092910_58364.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029093017_24050.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029093040_98474.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094327_54870.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094344_63667.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094358_64000.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094439_57098.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094535_52704.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094555_10135.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094609_46594.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094631_15907.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094649_63533.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094704_79785.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094719_82634.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094734_71040.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094751_60437.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094811_75872.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094849_99199.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029094942_96716.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029101610_15656.jpg" />
+    <Content Include="images\品牌及页面图片\品牌图片\20141029104211_77976.jpg" />
+    <Content Include="images\品牌及页面图片\女士页面图片\ad_lv_1.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\ad_lv_2.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\ad_lv_4.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\four_lv_1.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\four_lv_2.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\four_lv_3.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\four_lv_4.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\four_lv_5.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\four_lv_6.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\hot_1.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\hot_2.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\hot_3.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\hot_4.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\hot_5.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\one_lv_1.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\one_lv_2.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\one_lv_3.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\one_lv_4.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\one_lv_5.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\one_lv_6.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\two_lv_1.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\two_lv_2.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\two_lv_3.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\two_lv_4.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\two_lv_5.png" />
+    <Content Include="images\品牌及页面图片\女士页面图片\two_lv_6.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140907090130_79388.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140907094736_98413.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929154024_61776.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929155108_48194.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929155238_78628.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929160506_24480.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929160814_60794.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929161124_42892.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929161409_87454.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929162437_39329.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929162724_85838.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929163205_63220.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929181347_88625.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929182614_77868.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929183905_10492.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929184017_66355.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929201455_12082.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929202848_98510.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929214551_31274 %281%29.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140929214551_31274.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140930095018_59378.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20140930144805_99624.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20141017150009_87293.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\20141017150904_54036.png" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_10.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_11.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_12.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_13.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_14.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_2.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_3.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_4.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_5.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_6.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_7.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_8.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\brand_hot_9.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\electronics_ad_2.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\electronics_ad_3.jpg" />
+    <Content Include="images\品牌及页面图片\电子产品页面图片\electronics_ad_4.jpg" />
+    <Content Include="images\品牌及页面图片\男士页面图片\ad_1.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\ad_3.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\ad_4.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\carousel_1.jpg" />
+    <Content Include="images\品牌及页面图片\男士页面图片\four_1.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\four_2.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\four_3.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\four_4.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\four_5.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\four_6.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\one_1.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\one_2.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\one_3.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\one_4.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\one_5.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\one_6.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\pr_1.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\pr_2.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\pr_3.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\pr_4.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\pr_5.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\three_1.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\three_2.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\three_3.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\three_4.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\three_5.png" />
+    <Content Include="images\品牌及页面图片\男士页面图片\three_6.png" />
+    <Content Include="images\品牌图片\20141029092910_58364.jpg" />
+    <Content Include="images\品牌图片\20141029093017_24050.jpg" />
+    <Content Include="images\品牌图片\20141029093040_98474.jpg" />
+    <Content Include="images\品牌图片\20141029094327_54870.jpg" />
+    <Content Include="images\品牌图片\20141029094344_63667.jpg" />
+    <Content Include="images\品牌图片\20141029094358_64000.jpg" />
+    <Content Include="images\品牌图片\20141029094439_57098.jpg" />
+    <Content Include="images\品牌图片\20141029094535_52704.jpg" />
+    <Content Include="images\品牌图片\20141029094555_10135.jpg" />
+    <Content Include="images\品牌图片\20141029094609_46594.jpg" />
+    <Content Include="images\品牌图片\20141029094631_15907.jpg" />
+    <Content Include="images\品牌图片\20141029094649_63533.jpg" />
+    <Content Include="images\品牌图片\20141029094704_79785.jpg" />
+    <Content Include="images\品牌图片\20141029094719_82634.jpg" />
+    <Content Include="images\品牌图片\20141029094734_71040.jpg" />
+    <Content Include="images\品牌图片\20141029094751_60437.jpg" />
+    <Content Include="images\品牌图片\20141029094811_75872.jpg" />
+    <Content Include="images\品牌图片\20141029094849_99199.jpg" />
+    <Content Include="images\品牌图片\20141029094942_96716.jpg" />
+    <Content Include="images\品牌图片\20141029101610_15656.jpg" />
+    <Content Include="images\品牌图片\20141029104211_77976.jpg" />
+    <Content Include="images\奢侈品\20140930153649_61772.jpg" />
+    <Content Include="images\奢侈品\20140930162543_13586.jpg" />
+    <Content Include="images\奢侈品\20140930162637_84944.jpg" />
+    <Content Include="images\奢侈品\20140930162721_86035.jpg" />
+    <Content Include="images\奢侈品\20140930171427_22208.jpg" />
+    <Content Include="images\女士\20140930155610_85009.jpg" />
+    <Content Include="images\女士\20140930162810_36430.jpg" />
+    <Content Include="images\女士\20140930162928_32447.jpg" />
+    <Content Include="images\女士\20140930163024_59157.jpg" />
+    <Content Include="images\女士\20140930163232_24692.jpg" />
+    <Content Include="images\广告图\1.jpg" />
+    <Content Include="images\广告图\10.jpg" />
+    <Content Include="images\广告图\11.jpg" />
+    <Content Include="images\广告图\12.jpg" />
+    <Content Include="images\广告图\12.png" />
+    <Content Include="images\广告图\13.jpg" />
+    <Content Include="images\广告图\14.jpg" />
+    <Content Include="images\广告图\15.jpg" />
+    <Content Include="images\广告图\16.jpg" />
+    <Content Include="images\广告图\17.jpg" />
+    <Content Include="images\广告图\18.jpg" />
+    <Content Include="images\广告图\19.jpg" />
+    <Content Include="images\广告图\2.jpg" />
+    <Content Include="images\广告图\2.png" />
+    <Content Include="images\广告图\20.jpg" />
+    <Content Include="images\广告图\21.jpg" />
+    <Content Include="images\广告图\22.jpg" />
+    <Content Include="images\广告图\23.jpg" />
+    <Content Include="images\广告图\24.jpg" />
+    <Content Include="images\广告图\25.jpg" />
+    <Content Include="images\广告图\26.jpg" />
+    <Content Include="images\广告图\27.jpg" />
+    <Content Include="images\广告图\28.jpg" />
+    <Content Include="images\广告图\29.jpg" />
+    <Content Include="images\广告图\3.jpg" />
+    <Content Include="images\广告图\3.png" />
+    <Content Include="images\广告图\30.jpg" />
+    <Content Include="images\广告图\31.jpg" />
+    <Content Include="images\广告图\32.jpg" />
+    <Content Include="images\广告图\33.jpg" />
+    <Content Include="images\广告图\34.jpg" />
+    <Content Include="images\广告图\35.jpg" />
+    <Content Include="images\广告图\36.jpg" />
+    <Content Include="images\广告图\37.jpg" />
+    <Content Include="images\广告图\38.jpg" />
+    <Content Include="images\广告图\39.jpg" />
+    <Content Include="images\广告图\4.jpg" />
+    <Content Include="images\广告图\40.jpg" />
+    <Content Include="images\广告图\41.jpg" />
+    <Content Include="images\广告图\42.jpg" />
+    <Content Include="images\广告图\43.jpg" />
+    <Content Include="images\广告图\44.jpg" />
+    <Content Include="images\广告图\45.jpg" />
+    <Content Include="images\广告图\46.jpg" />
+    <Content Include="images\广告图\47.jpg" />
+    <Content Include="images\广告图\48.jpg" />
+    <Content Include="images\广告图\49.jpg" />
+    <Content Include="images\广告图\5.jpg" />
+    <Content Include="images\广告图\5.png" />
+    <Content Include="images\广告图\50.jpg" />
+    <Content Include="images\广告图\6.jpg" />
+    <Content Include="images\广告图\7.jpg" />
+    <Content Include="images\广告图\8.jpg" />
+    <Content Include="images\广告图\9.jpg" />
+    <Content Include="images\广告图\brand.png" />
+    <Content Include="images\广告图\brand_2.png" />
+    <Content Include="images\广告图\brand_3.png" />
+    <Content Include="images\广告图\brand_4.png" />
+    <Content Include="images\广告图\brand_5.png" />
+    <Content Include="images\广告图\brand_lv_1.png" />
+    <Content Include="images\广告图\brand_lv_2.png" />
+    <Content Include="images\广告图\brand_lv_3.png" />
+    <Content Include="images\广告图\brand_lv_4.png" />
+    <Content Include="images\广告图\brand_lv_5.png" />
+    <Content Include="images\广告图\首页轮播1.png" />
+    <Content Include="images\广告图\首页轮播2.png" />
+    <Content Include="images\广告图\首页轮播3.png" />
+    <Content Include="images\广告图\首页轮播4.jpg" />
+    <Content Include="images\广告图\首页轮播5.jpg" />
+    <Content Include="images\电子产品\1.jpg" />
+    <Content Include="images\电子产品\1.png" />
+    <Content Include="images\电子产品\2.jpg" />
+    <Content Include="images\电子产品\2.png" />
+    <Content Include="images\电子产品\20140928095852_41160.jpg" />
+    <Content Include="images\电子产品\20140928095955_85319.jpg" />
+    <Content Include="images\电子产品\20140928100025_33269.jpg" />
+    <Content Include="images\电子产品\20140928100128_20226.jpg" />
+    <Content Include="images\电子产品\20140930153340_34419.jpg" />
+    <Content Include="images\电子产品\20140930161513_57544.jpg" />
+    <Content Include="images\电子产品\20140930161832_46904.jpg" />
+    <Content Include="images\电子产品\20140930162129_71583.jpg" />
+    <Content Include="images\电子产品\20140930162208_25954.jpg" />
+    <Content Include="images\电子产品\20140930162314_14875.jpg" />
+    <Content Include="images\电子产品\20140930162423_40809.jpg" />
+    <Content Include="images\电子产品\20140930162458_67825.jpg" />
+    <Content Include="images\电子产品页面图片\20140907090130_79388.jpg" />
+    <Content Include="images\电子产品页面图片\20140907094736_98413.jpg" />
+    <Content Include="images\电子产品页面图片\20140929154024_61776.png" />
+    <Content Include="images\电子产品页面图片\20140929155108_48194.png" />
+    <Content Include="images\电子产品页面图片\20140929155238_78628.png" />
+    <Content Include="images\电子产品页面图片\20140929160506_24480.png" />
+    <Content Include="images\电子产品页面图片\20140929160814_60794.png" />
+    <Content Include="images\电子产品页面图片\20140929161124_42892.png" />
+    <Content Include="images\电子产品页面图片\20140929161409_87454.png" />
+    <Content Include="images\电子产品页面图片\20140929162437_39329.png" />
+    <Content Include="images\电子产品页面图片\20140929162724_85838.png" />
+    <Content Include="images\电子产品页面图片\20140929163205_63220.png" />
+    <Content Include="images\电子产品页面图片\20140929181347_88625.png" />
+    <Content Include="images\电子产品页面图片\20140929182614_77868.png" />
+    <Content Include="images\电子产品页面图片\20140929183905_10492.png" />
+    <Content Include="images\电子产品页面图片\20140929184017_66355.png" />
+    <Content Include="images\电子产品页面图片\20140929201455_12082.jpg" />
+    <Content Include="images\电子产品页面图片\20140929202848_98510.jpg" />
+    <Content Include="images\电子产品页面图片\20140929214551_31274 %281%29.png" />
+    <Content Include="images\电子产品页面图片\20140929214551_31274.png" />
+    <Content Include="images\电子产品页面图片\20140930095018_59378.jpg" />
+    <Content Include="images\电子产品页面图片\20140930144805_99624.jpg" />
+    <Content Include="images\电子产品页面图片\20141017150009_87293.png" />
+    <Content Include="images\电子产品页面图片\20141017150904_54036.png" />
+    <Content Include="images\电子产品页面图片\brand_hot.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_10.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_11.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_12.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_13.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_14.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_2.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_3.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_4.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_5.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_6.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_7.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_8.jpg" />
+    <Content Include="images\电子产品页面图片\brand_hot_9.jpg" />
+    <Content Include="images\电子产品页面图片\electronics_ad_2.jpg" />
+    <Content Include="images\电子产品页面图片\electronics_ad_3.jpg" />
+    <Content Include="images\男士\20140930155900_19581.jpg" />
+    <Content Include="images\男士\20140930163538_83141.jpg" />
+    <Content Include="images\男士\20140930163716_88163.jpg" />
+    <Content Include="images\男士\20140930163801_81422.jpg" />
+    <Content Include="images\男士\3.jpg" />
+    <Content Include="js\base.js" />
+    <Content Include="js\gdt.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\scrollImg.js" />
+    <Content Include="scripts\ajax.js" />
+    <Content Include="scripts\ckeditor\adapters\jquery.js" />
+    <Content Include="scripts\ckeditor\ckeditor.js" />
+    <Content Include="scripts\ckeditor\ckeditor_basic.js" />
+    <Content Include="scripts\ckeditor\ckeditor_basic_source.js" />
+    <Content Include="scripts\ckeditor\ckeditor_source.js" />
+    <Content Include="scripts\ckeditor\config.js" />
+    <Content Include="scripts\ckeditor\contents.css" />
+    <Content Include="scripts\ckeditor\images\spacer.gif" />
+    <Content Include="scripts\ckeditor\lang\af.js" />
+    <Content Include="scripts\ckeditor\lang\ar.js" />
+    <Content Include="scripts\ckeditor\lang\bg.js" />
+    <Content Include="scripts\ckeditor\lang\bn.js" />
+    <Content Include="scripts\ckeditor\lang\bs.js" />
+    <Content Include="scripts\ckeditor\lang\ca.js" />
+    <Content Include="scripts\ckeditor\lang\cs.js" />
+    <Content Include="scripts\ckeditor\lang\cy.js" />
+    <Content Include="scripts\ckeditor\lang\da.js" />
+    <Content Include="scripts\ckeditor\lang\de.js" />
+    <Content Include="scripts\ckeditor\lang\el.js" />
+    <Content Include="scripts\ckeditor\lang\en-au.js" />
+    <Content Include="scripts\ckeditor\lang\en-ca.js" />
+    <Content Include="scripts\ckeditor\lang\en-gb.js" />
+    <Content Include="scripts\ckeditor\lang\en.js" />
+    <Content Include="scripts\ckeditor\lang\eo.js" />
+    <Content Include="scripts\ckeditor\lang\es.js" />
+    <Content Include="scripts\ckeditor\lang\et.js" />
+    <Content Include="scripts\ckeditor\lang\eu.js" />
+    <Content Include="scripts\ckeditor\lang\fa.js" />
+    <Content Include="scripts\ckeditor\lang\fi.js" />
+    <Content Include="scripts\ckeditor\lang\fo.js" />
+    <Content Include="scripts\ckeditor\lang\fr-ca.js" />
+    <Content Include="scripts\ckeditor\lang\fr.js" />
+    <Content Include="scripts\ckeditor\lang\gl.js" />
+    <Content Include="scripts\ckeditor\lang\gu.js" />
+    <Content Include="scripts\ckeditor\lang\he.js" />
+    <Content Include="scripts\ckeditor\lang\hi.js" />
+    <Content Include="scripts\ckeditor\lang\hr.js" />
+    <Content Include="scripts\ckeditor\lang\hu.js" />
+    <Content Include="scripts\ckeditor\lang\is.js" />
+    <Content Include="scripts\ckeditor\lang\it.js" />
+    <Content Include="scripts\ckeditor\lang\ja.js" />
+    <Content Include="scripts\ckeditor\lang\ka.js" />
+    <Content Include="scripts\ckeditor\lang\km.js" />
+    <Content Include="scripts\ckeditor\lang\ko.js" />
+    <Content Include="scripts\ckeditor\lang\lt.js" />
+    <Content Include="scripts\ckeditor\lang\lv.js" />
+    <Content Include="scripts\ckeditor\lang\mn.js" />
+    <Content Include="scripts\ckeditor\lang\ms.js" />
+    <Content Include="scripts\ckeditor\lang\nb.js" />
+    <Content Include="scripts\ckeditor\lang\nl.js" />
+    <Content Include="scripts\ckeditor\lang\no.js" />
+    <Content Include="scripts\ckeditor\lang\pl.js" />
+    <Content Include="scripts\ckeditor\lang\pt-br.js" />
+    <Content Include="scripts\ckeditor\lang\pt.js" />
+    <Content Include="scripts\ckeditor\lang\ro.js" />
+    <Content Include="scripts\ckeditor\lang\ru.js" />
+    <Content Include="scripts\ckeditor\lang\sk.js" />
+    <Content Include="scripts\ckeditor\lang\sl.js" />
+    <Content Include="scripts\ckeditor\lang\sr-latn.js" />
+    <Content Include="scripts\ckeditor\lang\sr.js" />
+    <Content Include="scripts\ckeditor\lang\sv.js" />
+    <Content Include="scripts\ckeditor\lang\th.js" />
+    <Content Include="scripts\ckeditor\lang\tr.js" />
+    <Content Include="scripts\ckeditor\lang\uk.js" />
+    <Content Include="scripts\ckeditor\lang\vi.js" />
+    <Content Include="scripts\ckeditor\lang\zh-cn.js" />
+    <Content Include="scripts\ckeditor\lang\zh.js" />
+    <Content Include="scripts\ckeditor\lang\_languages.js" />
+    <Content Include="scripts\ckeditor\lang\_translationstatus.txt" />
+    <Content Include="scripts\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="scripts\ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="scripts\ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="scripts\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="scripts\ckeditor\plugins\adobeair\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\ajax\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="scripts\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="scripts\ckeditor\plugins\devtools\lang\en.js" />
+    <Content Include="scripts\ckeditor\plugins\devtools\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="scripts\ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="scripts\ckeditor\plugins\docprops\dialogs\docprops.js" />
+    <Content Include="scripts\ckeditor\plugins\docprops\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="scripts\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="scripts\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="scripts\ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="scripts\ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="scripts\ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="scripts\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="scripts\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="scripts\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="scripts\ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="scripts\ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="scripts\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="scripts\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="scripts\ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="scripts\ckeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="scripts\ckeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="scripts\ckeditor\plugins\placeholder\lang\he.js" />
+    <Content Include="scripts\ckeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="scripts\ckeditor\plugins\placeholder\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="scripts\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="scripts\ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="scripts\ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="scripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="scripts\ckeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="scripts\ckeditor\plugins\stylesheetparser\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="scripts\ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="scripts\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="scripts\ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="scripts\ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="scripts\ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="scripts\ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="scripts\ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="scripts\ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="scripts\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="scripts\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="scripts\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="scripts\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="scripts\ckeditor\plugins\xml\plugin.js" />
+    <Content Include="scripts\ckeditor\skins\kama\dialog.css" />
+    <Content Include="scripts\ckeditor\skins\kama\editor.css" />
+    <Content Include="scripts\ckeditor\skins\kama\icons.png" />
+    <Content Include="scripts\ckeditor\skins\kama\icons_rtl.png" />
+    <Content Include="scripts\ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="scripts\ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="scripts\ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="scripts\ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="scripts\ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="scripts\ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="scripts\ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="scripts\ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="scripts\ckeditor\skins\kama\skin.js" />
+    <Content Include="scripts\ckeditor\skins\kama\templates.css" />
+    <Content Include="scripts\ckeditor\skins\office2003\dialog.css" />
+    <Content Include="scripts\ckeditor\skins\office2003\editor.css" />
+    <Content Include="scripts\ckeditor\skins\office2003\icons.png" />
+    <Content Include="scripts\ckeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="scripts\ckeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="scripts\ckeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="scripts\ckeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="scripts\ckeditor\skins\office2003\images\mini.gif" />
+    <Content Include="scripts\ckeditor\skins\office2003\images\noimage.png" />
+    <Content Include="scripts\ckeditor\skins\office2003\images\sprites.png" />
+    <Content Include="scripts\ckeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="scripts\ckeditor\skins\office2003\skin.js" />
+    <Content Include="scripts\ckeditor\skins\office2003\templates.css" />
+    <Content Include="scripts\ckeditor\skins\v2\dialog.css" />
+    <Content Include="scripts\ckeditor\skins\v2\editor.css" />
+    <Content Include="scripts\ckeditor\skins\v2\icons.png" />
+    <Content Include="scripts\ckeditor\skins\v2\icons_rtl.png" />
+    <Content Include="scripts\ckeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="scripts\ckeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="scripts\ckeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="scripts\ckeditor\skins\v2\images\mini.gif" />
+    <Content Include="scripts\ckeditor\skins\v2\images\noimage.png" />
+    <Content Include="scripts\ckeditor\skins\v2\images\sprites.png" />
+    <Content Include="scripts\ckeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="scripts\ckeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="scripts\ckeditor\skins\v2\skin.js" />
+    <Content Include="scripts\ckeditor\skins\v2\templates.css" />
+    <Content Include="scripts\ckeditor\themes\default\theme.js" />
+    <Content Include="scripts\Common.js" />
+    <Content Include="scripts\ddsmoothmenu.js" />
+    <Content Include="scripts\jquery-1.4.2.min.js" />
+    <Content Include="scripts\jquery-ui.js" />
+    <Content Include="scripts\jquery-ui.min.js" />
+    <Content Include="scripts\jquery.KinSlideshow-1.2.1.js" />
+    <Content Include="scripts\jquery.ui.core.js" />
+    <Content Include="scripts\webtry_roll.js" />
+    <Content Include="ShoppingCart.aspx" />
+    <Content Include="Special.aspx" />
+    <Content Include="templates\Front\404.html" />
+    <Content Include="templates\Front\Brand.html" />
+    <Content Include="templates\Front\CheckOut.html" />
+    <Content Include="templates\Front\Detials.html" />
+    <Content Include="templates\Front\Electronic.html" />
+    <Content Include="templates\Front\Female.html" />
+    <Content Include="templates\Front\Index.html" />
+    <Content Include="templates\Front\login.html" />
+    <Content Include="templates\Front\Luxury.html" />
+    <Content Include="templates\Front\Male.html" />
+    <Content Include="templates\Front\Register.html" />
+    <Content Include="templates\Front\Register2.html" />
+    <Content Include="templates\Front\ShoppingCart.html" />
+    <Content Include="templates\Front\Spcial1.html" />
+    <Content Include="templates\Front\Special2.html" />
+    <Content Include="templates\Front\SubmitCart.html" />
+    <Content Include="templates\Front\tijia.html" />
+    <Content Include="templates\Front\tjgwc.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\UserEmailCheck.aspx.cs">
+      <DependentUpon>UserEmailCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\UserEmailCheck.aspx.designer.cs">
+      <DependentUpon>UserEmailCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.ashx.cs">
+      <DependentUpon>Brand.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="captcha\captcha.ashx.cs">
+      <DependentUpon>captcha.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="captcha\CaptchaImage.cs" />
+    <Compile Include="CheckOut.aspx.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckOut.aspx.designer.cs">
+      <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonHelper.cs" />
+    <Compile Include="Detials.aspx.cs">
+      <DependentUpon>Detials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detials.aspx.designer.cs">
+      <DependentUpon>Detials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Electronic.ashx.cs">
+      <DependentUpon>Electronic.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Female.ashx.cs">
+      <DependentUpon>Female.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="index.ashx.cs">
+      <DependentUpon>index.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Luxury.ashx.cs">
+      <DependentUpon>Luxury.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Male.ashx.cs">
+      <DependentUpon>Male.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Special.aspx.cs">
+      <DependentUpon>Special.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Special.aspx.designer.cs">
+      <DependentUpon>Special.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Special2.ashx.cs">
+      <DependentUpon>Special2.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="captcha\captcha.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{16fb10a1-6b23-4c55-897b-d69ed6b8b4a9}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{ec063baa-31fc-48c3-b864-bb9d7cf9842e}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988c62e-247f-471f-a183-db509c7a3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{383f092b-f20b-409d-bb94-610cc22e43ec}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Brand.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Electronic.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Female.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Login.ashx" />
+    <Content Include="Luxury.ashx" />
+    <Content Include="Male.ashx" />
+    <Content Include="Special2.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\ckeditor\.htaccess" />
+    <Content Include="upload\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\dzcp\dzcp\9815.36" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\广告图\新建文件夹\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2840</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

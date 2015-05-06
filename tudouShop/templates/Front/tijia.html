@@ -1,0 +1,115 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>ANRUI International | login</title>
+    <link href="css/tjgwc.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="scripts/ajax.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.KinSlideshow-1.2.1.js"></script>
+    <script type="text/javascript" src="scripts/webtry_roll.js"></script>
+    <script type="text/javascript" src="scripts/ddsmoothmenu.js"></script>
+    <meta charset="utf-8">
+</head>
+<body>
+    <!---start-wrap---->
+    <!---start-header---->
+    <div class="header">
+        <div class="top-header">
+            <div class="wrap">
+                <div class="footer-left">
+                    <ul>
+                        <li><a href="index.html">首页</a> <span></span></li>
+                        <li><a href="nanshi.html">男士</a> <span></span></li>
+                        <li><a href="nvshi.html">女生</a> <span></span></li>
+                        <li><a href="dzcp.html">电子产品</a> <span></span></li>
+                        <li><a href="ssp.html">奢饰品</a> <span></span></li>
+                        <li><a href="pinpai.html">品牌</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+
+                <div class="top-header-right">
+                    <ul>
+                        <li><a href="login.html">登录</a><span> </span></li>
+                        <li><a href="zc.html">注册</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="mid-header">
+            <div class="wrap">
+                <div class="mid-grid-right">
+                    <a href="index.html"><span>这是LOGO</span></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="wrap">
+            </div>
+        </div>
+    </div>
+
+    <div class="container_12">
+        <div id="content" class="grid_12">
+            <header>
+                <h1 class="page_title">Shopping cart</h1>
+            </header>
+
+            <article>
+                <table class="cart_product">
+                    <tr class="bg">
+                        <th class="images"></th>
+                        <th class="name">商品名</th>
+                        <th class="edit">123</th>
+                        <th class="price"></th>
+                        <th class="qty">数量</th>
+                        <th class="subtotal">总价</th>
+                        <th class="close"></th>
+                    </tr>
+                    #foreach($p in $Model.Products )
+                          <tr bgcolor="#FAFAFA">
+                              #set($total = $p.Price*$p.Quantity)
+                              <td class="images">
+                                  <img src="$p.Img" alt="Product 12" title=""></td>
+                              <td bgcolor="#FAFAFA" class="name">$p.ProName</td>
+                              <td class="edit"><a title="Edit" href="#">Edit</a></td>
+                              <td class="price">$$p.Price</td>
+                              <td class="qty">
+                                  <input type="text" id="quantity" name="quantity" value="$p.Quantity" placeholder="$p.Quantity"  onblur="total(this)"></td>
+                              <td class="subtotal">$total</td>
+                              <td class="close"><a title="close" class="close" href="#"></a></td>
+                          </tr>
+                    #end
+                        <tr>
+                            <td colspan="7" class="cart_but"><span class="zi8"><a href="Checkout.ashx">结算</a></span>
+                            </td>
+                        </tr>
+                </table>
+                <!-- #cart_forms -->
+                <div class="clear"></div>
+            </article>
+            <!-- .related -->
+
+            <div class="clear"></div>
+        </div>
+        <!-- #content -->
+
+        <div class="clear"></div>
+    </div>
+    <script type="text/ecmascript">
+        function total(d) {            
+            //alert($("#quantity").val());
+           // alert(d.value);
+            var str = d.parentElement.parentElement.cells[3].innerHTML.substr(1);
+            //alert(str);
+            var price = str * d.value;
+            d.parentElement.parentElement.cells[5].innerHTML = price;
+        }
+    </script>
+</body>
+</html>
+
