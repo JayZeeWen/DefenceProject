@@ -23,12 +23,7 @@ D:\GitHub\tudouShop\Entity\bin\Debug\Entity.dll
 D:\GitHub\tudouShop\Entity\bin\Debug\Entity.pdb
 D:\GitHub\tudouShop\Entity\obj\Debug\Entity.dll
 D:\GitHub\tudouShop\Entity\obj\Debug\Entity.pdb
-G:\project\tudouShop\Entity\bin\Debug\Entity.dll
-G:\project\tudouShop\Entity\bin\Debug\Entity.pdb
-G:\project\tudouShop\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
-G:\project\tudouShop\Entity\obj\Debug\Entity.dll
-G:\project\tudouShop\Entity\obj\Debug\Entity.pdb
-D:\GitHub\DefenceProject\Entity\bin\Debug\Entity.dll
-D:\GitHub\DefenceProject\Entity\bin\Debug\Entity.pdb
-D:\GitHub\DefenceProject\Entity\obj\Debug\Entity.dll
-D:\GitHub\DefenceProject\Entity\obj\Debug\Entity.pdb
+F:\GitHub\DefenceProject\Entity\bin\Debug\Entity.dll
+F:\GitHub\DefenceProject\Entity\bin\Debug\Entity.pdb
+F:\GitHub\DefenceProject\Entity\obj\Debug\Entity.dll
+F:\GitHub\DefenceProject\Entity\obj\Debug\Entity.pdb

@@ -37,12 +37,8 @@ D:\GitHub\tudouShop\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
 D:\GitHub\tudouShop\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
 D:\GitHub\tudouShop\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
 D:\GitHub\tudouShop\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
-G:\project\tudouShop\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
-G:\project\tudouShop\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
-G:\project\tudouShop\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
-G:\project\tudouShop\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
-G:\project\tudouShop\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
-D:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
-D:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
-D:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
-D:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
+F:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
+F:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
+F:\GitHub\DefenceProject\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
+F:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
+F:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
