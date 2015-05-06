@@ -107,3 +107,16 @@ G:\project\tudouShop\BLL\bin\Debug\Entity.pdb
 G:\project\tudouShop\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 G:\project\tudouShop\BLL\obj\Debug\BLL.dll
 G:\project\tudouShop\BLL\obj\Debug\BLL.pdb
+D:\GitHub\DefenceProject\BLL\bin\Debug\BLL.dll
+D:\GitHub\DefenceProject\BLL\bin\Debug\BLL.pdb
+D:\GitHub\DefenceProject\BLL\bin\Debug\DAL.dll
+D:\GitHub\DefenceProject\BLL\bin\Debug\Entity.dll
+D:\GitHub\DefenceProject\BLL\bin\Debug\Maticsoft.DBUtility.dll
+D:\GitHub\DefenceProject\BLL\bin\Debug\System.Data.SQLite.dll
+D:\GitHub\DefenceProject\BLL\bin\Debug\MySql.Data.dll
+D:\GitHub\DefenceProject\BLL\bin\Debug\DAL.pdb
+D:\GitHub\DefenceProject\BLL\bin\Debug\Maticsoft.DBUtility.pdb
+D:\GitHub\DefenceProject\BLL\bin\Debug\Entity.pdb
+D:\GitHub\DefenceProject\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\GitHub\DefenceProject\BLL\obj\Debug\BLL.dll
+D:\GitHub\DefenceProject\BLL\obj\Debug\BLL.pdb

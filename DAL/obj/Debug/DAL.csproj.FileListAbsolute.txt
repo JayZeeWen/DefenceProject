@@ -86,3 +86,14 @@ G:\project\tudouShop\DAL\bin\Debug\Entity.pdb
 G:\project\tudouShop\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 G:\project\tudouShop\DAL\obj\Debug\DAL.dll
 G:\project\tudouShop\DAL\obj\Debug\DAL.pdb
+D:\GitHub\DefenceProject\DAL\bin\Debug\DAL.dll
+D:\GitHub\DefenceProject\DAL\bin\Debug\DAL.pdb
+D:\GitHub\DefenceProject\DAL\bin\Debug\Entity.dll
+D:\GitHub\DefenceProject\DAL\bin\Debug\Maticsoft.DBUtility.dll
+D:\GitHub\DefenceProject\DAL\bin\Debug\System.Data.SQLite.dll
+D:\GitHub\DefenceProject\DAL\bin\Debug\MySql.Data.dll
+D:\GitHub\DefenceProject\DAL\bin\Debug\Maticsoft.DBUtility.pdb
+D:\GitHub\DefenceProject\DAL\bin\Debug\Entity.pdb
+D:\GitHub\DefenceProject\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\GitHub\DefenceProject\DAL\obj\Debug\DAL.dll
+D:\GitHub\DefenceProject\DAL\obj\Debug\DAL.pdb
