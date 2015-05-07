@@ -22,6 +22,7 @@ namespace EShop
             {
                 BindGrid();
                 BindDropDownListDataSet();
+                btnNew.OnClientClick = InfoWindows.GetShowReference("ProductInfo.aspx?t=0", "新增商品");
             }
         }
 
@@ -61,10 +62,10 @@ namespace EShop
             //品牌数据源
             BLL.T_Brand brandBll = new BLL.T_Brand();
             DataTable Branddt = brandBll.GetAllList().Tables[0];
-            ddlType.DataSource = Branddt;
-            ddlType.DataTextField = "BraName";
-            ddlType.DataValueField = "BraID";
-            ddlType.DataBind();
+            ddlBrand.DataSource = Branddt;
+            ddlBrand.DataTextField = "BraName";
+            ddlBrand.DataValueField = "BraID";
+            ddlBrand.DataBind();
  
         }
         #endregion
@@ -83,6 +84,16 @@ namespace EShop
             BLL.T_Brand bll = new BLL.T_Brand();
             Model.T_Brand brand = bll.GetModel(BID);
             return brand.BraName;
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected string GetEditUrl(object id, object name)
+        {
+            return InfoWindows.GetShowReference("ProductInfo.aspx?id=" + id, "编辑 - " + name);
         }
 
         

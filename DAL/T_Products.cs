@@ -323,7 +323,7 @@ namespace EShop.DAL
 				strSql.Append(" WHERE " + strWhere);
 			}
 			strSql.Append(" ) TT");
-			strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", pageIndex  * pageSize + 1 , (pageIndex + 1) * pageSize );
+            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", (pageIndex - 1) * pageSize + 1, pageIndex * pageSize);
 			return DbHelperSQL.Query(strSql.ToString());
 		}
 

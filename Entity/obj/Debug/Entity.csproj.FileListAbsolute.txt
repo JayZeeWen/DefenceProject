@@ -27,3 +27,7 @@ F:\GitHub\DefenceProject\Entity\bin\Debug\Entity.dll
 F:\GitHub\DefenceProject\Entity\bin\Debug\Entity.pdb
 F:\GitHub\DefenceProject\Entity\obj\Debug\Entity.dll
 F:\GitHub\DefenceProject\Entity\obj\Debug\Entity.pdb
+D:\GitHub\DefenceProject\Entity\bin\Debug\Entity.dll
+D:\GitHub\DefenceProject\Entity\bin\Debug\Entity.pdb
+D:\GitHub\DefenceProject\Entity\obj\Debug\Entity.dll
+D:\GitHub\DefenceProject\Entity\obj\Debug\Entity.pdb

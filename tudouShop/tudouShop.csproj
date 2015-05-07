@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AdminLogin.aspx" />
+    <Content Include="Admin\ProductInfo.aspx" />
     <Content Include="Admin\ProductList.aspx" />
     <Content Include="aspx\Login.aspx" />
     <Content Include="aspx\Register.aspx" />
@@ -1026,6 +1027,13 @@
     </Compile>
     <Compile Include="Admin\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductInfo.aspx.cs">
+      <DependentUpon>ProductInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductInfo.aspx.designer.cs">
+      <DependentUpon>ProductInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>

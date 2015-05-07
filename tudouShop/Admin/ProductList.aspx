@@ -35,7 +35,18 @@
                     <Items>
                         <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="商品列表"  runat="server" EnableCollapse="false"
                             DataKeyNames="ProName" PageSize="15" AllowPaging="true" IsDatabasePaging="true" OnPageIndexChange="Grid1_PageIndexChange"
-                            AllowCellEditing="true" ClicksToEdit="1" AllowSorting="true">
+                            AllowCellEditing="true" ClicksToEdit="2" AllowSorting="true">
+                            <Toolbars>
+                                <f:Toolbar ID="Toolbar1" runat="server">
+                                    <Items>
+                                        <f:Button ID="btnNew" Text="新增商品" Icon="Add" EnablePostBack="false" runat="server">
+                                        </f:Button>
+                                        <f:ToolbarFill runat="server"></f:ToolbarFill>
+                                        <f:Button ID="btnSave" runat="server" Text="保存数据" OnClick="btnSave_Click">
+                                        </f:Button>
+                                    </Items>
+                                </f:Toolbar>
+                            </Toolbars>
                             <Columns>
                                 <f:RowNumberField />
                                 <f:BoundField Width="200px" DataField="ProName" DataFormatString="{0}" HeaderText="商品名称" TextAlign="Center" />
@@ -50,7 +61,12 @@
                                     </Editor>
                                 </f:RenderField>
                                 
+                                <f:RenderField ColumnID="Price" DataField="Price" FieldType="Float" HeaderText="销售价格">
+                                    
+                                </f:RenderField>
+
                                 <f:BoundField DataField="Price" DataFormatString="$ {0}" HeaderText="价格" TextAlign="Center" />
+
                                 <f:BoundField DataField="SalePoint" DataFormatString="{0}" HeaderText="销售积分" TextAlign="Center"></f:BoundField>
                                 <f:BoundField DataField="Stock" DataFormatString="{0}" HeaderText="库存" TextAlign="Center"></f:BoundField>
                                 <f:RenderField Width="120px" ColumnID="ShelveDate" DataField="ShelveDate" FieldType="Date"
@@ -61,8 +77,17 @@
                                     </Editor>
                                 </f:RenderField>
                                 <f:BoundField  DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>
+                                <f:LinkButtonField ColumnID="Delete" HeaderText="删除" Width="80px" EnablePostBack="false" TextAlign="Center"
+                                    Icon="Delete" />
+                                <f:WindowField ColumnID="ProID" Width="80px" WindowID="InfoWindows" HeaderText="编辑"
+                                    Icon="Pencil" ToolTip="编辑" DataTextFormatString="{0}" DataIFrameUrlFields="ProID"
+                                    DataIFrameUrlFormatString="ProductInfo.aspx?id={0}&t=1" DataWindowTitleField="ProName" TextAlign="Center"
+                                    DataWindowTitleFormatString="编辑 - {0}" />
                             </Columns>
                         </f:Grid>
+                        <f:Window ID="InfoWindows" Title="编辑" Hidden="true" EnableIFrame="true" runat="server"
+                            CloseAction="HidePostBack" EnableMaximize="true" EnableResize="true" Target="Top" IsModal="True" Width="850px" Height="450px">
+                        </f:Window>
                     </Items>
                 </f:Panel>
                 <f:Panel runat="server" ID="panelBottomRegion" RegionPosition="Bottom" RegionSplit="true" EnableCollapse="false" Height="20px"

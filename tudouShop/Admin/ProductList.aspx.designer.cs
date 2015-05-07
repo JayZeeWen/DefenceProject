@@ -94,6 +94,33 @@ namespace EShop {
         protected global::FineUI.Grid Grid1;
         
         /// <summary>
+        /// Toolbar1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Toolbar Toolbar1;
+        
+        /// <summary>
+        /// btnNew 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnNew;
+        
+        /// <summary>
+        /// btnSave 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnSave;
+        
+        /// <summary>
         /// ddlType 控件。
         /// </summary>
         /// <remarks>
@@ -119,6 +146,15 @@ namespace EShop {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.DatePicker DatePicker1;
+        
+        /// <summary>
+        /// InfoWindows 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Window InfoWindows;
         
         /// <summary>
         /// panelBottomRegion 控件。

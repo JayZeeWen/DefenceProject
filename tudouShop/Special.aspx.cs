@@ -72,7 +72,7 @@ namespace EShop
                 pageIndex = Convert.ToInt32(Request.QueryString["p"]);
             }
             SetPage(pageIndex, PageCount);
-            rptProducts.DataSource = probll.GetListByPage(condition, "", (pageIndex - 1) * size + 1, pageIndex * size);
+            rptProducts.DataSource = probll.GetListByPage(condition, "", pageIndex, size);
 
             if (string.IsNullOrEmpty(brand) && !string.IsNullOrEmpty(ctype))
             {
