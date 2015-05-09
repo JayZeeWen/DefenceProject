@@ -39,7 +39,6 @@ D:\GitHub\tudouShop\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
 D:\GitHub\tudouShop\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
 F:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
 F:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
-F:\GitHub\DefenceProject\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
 F:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
 F:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
 D:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.dll

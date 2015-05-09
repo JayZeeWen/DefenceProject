@@ -98,12 +98,12 @@ namespace EShop
                 int rowID = Convert.ToInt32(Grid1.DataKeys[rowIndex][0]);
                 DataRow row = FindRowByID(rowID);
 
-                UpdateDataRow(modifiedDict[rowIndex], row);
+                //UpdateDataRow(modifiedDict[rowIndex], row);
             }
 
             BindGrid();
 
-            labResult.Text = "用户修改的数据：" + Grid1.GetModifiedData().ToString(Newtonsoft.Json.Formatting.None);
+            //labResult.Text = "用户修改的数据：" + Grid1.GetModifiedData().ToString(Newtonsoft.Json.Formatting.None);
 
             Alert.Show("数据保存成功！（表格数据已重新绑定）");
         }
@@ -127,7 +127,7 @@ namespace EShop
 
         private DataRow FindRowByID(int rowID)
         {
-            DataTable table = GetSourceData();
+            DataTable table = GetSourceTable();
             foreach (DataRow row in table.Rows)
             {
                 if (Convert.ToInt32(row["Id"]) == rowID)
