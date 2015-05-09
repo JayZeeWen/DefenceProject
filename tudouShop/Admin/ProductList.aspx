@@ -25,7 +25,7 @@
                     </Content>
                 </f:Panel>
                 <f:Panel runat="server" ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" EnableCollapse="false"
-                    Width="200px" Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="5px">
+                    Width="140px" Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="5px">
                     <Items>
                         <f:Label ID="Label2" runat="server" Text="左侧面板的内容">
                         </f:Label>
@@ -34,8 +34,8 @@
                 <f:Panel runat="server" ID="panelCenterRegion" RegionPosition="Center" ShowBorder="true"  BodyPadding="5px" Title=" " >
                     <Items>
                         <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="商品列表"  runat="server" EnableCollapse="false"
-                            DataKeyNames="ProName" PageSize="15" AllowPaging="true" IsDatabasePaging="true" OnPageIndexChange="Grid1_PageIndexChange"
-                            AllowCellEditing="true" ClicksToEdit="2" AllowSorting="true">
+                            DataKeyNames="ProID,ProName" PageSize="13" AllowPaging="true" IsDatabasePaging="true" OnPageIndexChange="Grid1_PageIndexChange"
+                            AllowCellEditing="true" ClicksToEdit="2" AllowSorting="true" OnRowCommand="Grid1_RowCommand">
                             <Toolbars>
                                 <f:Toolbar ID="Toolbar1" runat="server">
                                     <Items>
@@ -77,9 +77,9 @@
                                     </Editor>
                                 </f:RenderField>
                                 <f:BoundField  DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>
-                                <f:LinkButtonField ColumnID="Delete" HeaderText="删除" Width="80px" EnablePostBack="false" TextAlign="Center"
-                                    Icon="Delete" />
-                                <f:WindowField ColumnID="ProID" Width="80px" WindowID="InfoWindows" HeaderText="编辑"
+                                <f:LinkButtonField HeaderText="&nbsp;" TextAlign="Center" Width="60px" ConfirmText="删除选中行？" ConfirmTarget="Top"
+                                CommandName="Del" Icon="Delete" />
+                                <f:WindowField ColumnID="ProID" Width="60px" WindowID="InfoWindows" HeaderText="编辑"
                                     Icon="Pencil" ToolTip="编辑" DataTextFormatString="{0}" DataIFrameUrlFields="ProID"
                                     DataIFrameUrlFormatString="ProductInfo.aspx?id={0}&t=1" DataWindowTitleField="ProName" TextAlign="Center"
                                     DataWindowTitleFormatString="编辑 - {0}" />

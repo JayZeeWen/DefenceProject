@@ -130,10 +130,10 @@ namespace EShop.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from T_Products ");
+            strSql.Append("update T_Products set state = 1 ");
 			strSql.Append(" where ProID=@ProID ");
 			SqlParameter[] parameters = {
-					new SqlParameter("@ProID", SqlDbType.BigInt,8)			};
+					new SqlParameter("@ProID", SqlDbType.BigInt,8)};
 			parameters[0].Value = ProID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
