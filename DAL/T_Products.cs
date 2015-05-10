@@ -38,11 +38,10 @@ namespace EShop.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into T_Products(");
-			strSql.Append("ProID,CTID,BraID,ProName,Price,SalePoint,Des,Stock,Img,ShelveDate)");
+			strSql.Append("CTID,BraID,ProName,Price,SalePoint,Des,Stock,Img,ShelveDate,state)");
 			strSql.Append(" values (");
-			strSql.Append("@ProID,@CTID,@BraID,@ProName,@Price,@SalePoint,@Des,@Stock,@Img,@ShelveDate)");
+			strSql.Append("@CTID,@BraID,@ProName,@Price,@SalePoint,@Des,@Stock,@Img,@ShelveDate,0)");
 			SqlParameter[] parameters = {
-					new SqlParameter("@ProID", SqlDbType.BigInt,8),
 					new SqlParameter("@CTID", SqlDbType.BigInt,8),
 					new SqlParameter("@BraID", SqlDbType.BigInt,8),
 					new SqlParameter("@ProName", SqlDbType.NVarChar,20),
@@ -51,17 +50,16 @@ namespace EShop.DAL
 					new SqlParameter("@Des", SqlDbType.NVarChar,-1),
 					new SqlParameter("@Stock", SqlDbType.Int,4),
 					new SqlParameter("@Img", SqlDbType.NVarChar,-1),
-					new SqlParameter("@ShelveDate", SqlDbType.DateTime)};
-			parameters[0].Value = model.ProID;
-			parameters[1].Value = model.CTID;
-			parameters[2].Value = model.BraID;
-			parameters[3].Value = model.ProName;
-			parameters[4].Value = model.Price;
-			parameters[5].Value = model.SalePoint;
-			parameters[6].Value = model.Des;
-			parameters[7].Value = model.Stock;
-			parameters[8].Value = model.Img;
-			parameters[9].Value = model.ShelveDate;
+					new SqlParameter("@ShelveDate", SqlDbType.DateTime)};			
+			parameters[0].Value = model.CTID;
+			parameters[1].Value = model.BraID;
+			parameters[2].Value = model.ProName;
+			parameters[3].Value = model.Price;
+			parameters[4].Value = model.SalePoint;
+			parameters[5].Value = model.Des;
+			parameters[6].Value = model.Stock;
+			parameters[7].Value = model.Img;
+			parameters[8].Value = model.ShelveDate;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
