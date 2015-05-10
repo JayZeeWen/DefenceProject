@@ -17,7 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" runat="server"  Layout="Region" Title=" ">
+        <f:Panel ID="Panel1" runat="server" Layout="Region" Title=" ">
             <Items>
                 <f:Panel runat="server" ID="panelTopRegion" Height="50px" RegionPosition="Top" ShowHeader="false">
                     <Content>
@@ -31,9 +31,9 @@
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Panel runat="server" ID="panelCenterRegion" RegionPosition="Center" ShowBorder="true"  BodyPadding="5px" Title=" " >
+                <f:Panel runat="server" ID="panelCenterRegion" RegionPosition="Center" ShowBorder="true" BodyPadding="5px" Title=" ">
                     <Items>
-                        <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="商品列表"  runat="server" EnableCollapse="false"
+                        <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="商品列表" runat="server" EnableCollapse="false"
                             DataKeyNames="ProID,ProName" PageSize="13" AllowPaging="true" IsDatabasePaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                             AllowCellEditing="true" ClicksToEdit="2" AllowSorting="true" OnRowCommand="Grid1_RowCommand">
                             <Toolbars>
@@ -49,26 +49,37 @@
                             </Toolbars>
                             <Columns>
                                 <f:RowNumberField />
-                                <f:BoundField Width="200px" DataField="ProName" DataFormatString="{0}" HeaderText="商品名称" TextAlign="Center" />
-                                <f:RenderField ColumnID="TID" DataField="TID" HeaderText="大类" FieldType="Int" RendererFunction="renderType" TextAlign="Center">
+                                <f:RenderField Width="200px" TextAlign="Center" ColumnID="ProName" DataField="ProName" FieldType="String"
+                                    HeaderText="商品名称">
                                     <Editor>
-                                        <f:DropDownList runat="server" id="ddlType" Required="true"></f:DropDownList>
+                                        <f:TextBox ID="txtProName" Required="true" runat="server">
+                                        </f:TextBox>
                                     </Editor>
                                 </f:RenderField>
-                                 <f:RenderField ColumnID="BraID" DataField="BraID" HeaderText="品牌" FieldType="Int" RendererFunction="renderBrand" TextAlign="Center">
+                                <f:RenderField ColumnID="BraID" DataField="BraID" HeaderText="品牌" FieldType="Int" RendererFunction="renderBrand" TextAlign="Center">
                                     <Editor>
-                                        <f:DropDownList runat="server" id="ddlBrand" Required="true"></f:DropDownList>
+                                        <f:DropDownList runat="server" ID="ddlBrand" Required="true"></f:DropDownList>
                                     </Editor>
                                 </f:RenderField>
-                                
-                                <f:RenderField ColumnID="Price" DataField="Price" FieldType="Float" HeaderText="销售价格">
-                                    
+
+                                <f:RenderField TextAlign="Center" ColumnID="Price" DataField="Price" RendererFunction="renderMoney" FieldType="Float" HeaderText="价格">
+                                    <Editor>
+                                        <f:TextBox ID="txtPrice" Required="true" runat="server">
+                                        </f:TextBox>
+                                    </Editor>
                                 </f:RenderField>
-
-                                <f:BoundField DataField="Price" DataFormatString="$ {0}" HeaderText="价格" TextAlign="Center" />
-
-                                <f:BoundField DataField="SalePoint" DataFormatString="{0}" HeaderText="销售积分" TextAlign="Center"></f:BoundField>
-                                <f:BoundField DataField="Stock" DataFormatString="{0}" HeaderText="库存" TextAlign="Center"></f:BoundField>
+                                <f:RenderField TextAlign="Center" ColumnID="SalePoint" DataField="SalePoint" FieldType="Int" HeaderText="销售积分">
+                                    <Editor>
+                                        <f:TextBox ID="txtSaslePoint" Required="true" runat="server">
+                                        </f:TextBox>
+                                    </Editor>
+                                </f:RenderField>
+                                <f:RenderField TextAlign="Center" ColumnID="Stock" DataField="Stock" FieldType="Int" HeaderText="库存">
+                                    <Editor>
+                                        <f:TextBox ID="txtStrock" Required="true" runat="server">
+                                        </f:TextBox>
+                                    </Editor>
+                                </f:RenderField>
                                 <f:RenderField Width="120px" ColumnID="ShelveDate" DataField="ShelveDate" FieldType="Date"
                                     Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="上架日期" TextAlign="Center">
                                     <Editor>
@@ -76,9 +87,9 @@
                                         </f:DatePicker>
                                     </Editor>
                                 </f:RenderField>
-                                <f:BoundField  DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>
+                                <f:BoundField DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>
                                 <f:LinkButtonField HeaderText="&nbsp;" TextAlign="Center" Width="60px" ConfirmText="删除选中行？" ConfirmTarget="Top"
-                                CommandName="Del" Icon="Delete" />
+                                    CommandName="Del" Icon="Delete" />
                                 <f:WindowField ColumnID="ProID" Width="60px" WindowID="InfoWindows" HeaderText="编辑"
                                     Icon="Pencil" ToolTip="编辑" DataTextFormatString="{0}" DataIFrameUrlFields="ProID"
                                     DataIFrameUrlFormatString="ProductInfo.aspx?id={0}&t=1" DataWindowTitleField="ProName" TextAlign="Center"
@@ -92,7 +103,6 @@
                 </f:Panel>
                 <f:Panel runat="server" ID="panelBottomRegion" RegionPosition="Bottom" RegionSplit="true" EnableCollapse="false" Height="20px"
                     Title=" " ShowBorder="true" ShowHeader="true" BodyPadding="5px">
-                    
                 </f:Panel>
             </Items>
         </f:Panel>
@@ -106,6 +116,12 @@
             var bid = value;
             return EShop.ProductList.getBrandName(bid).value;
         }
+
+        function renderMoney(value) {
+            var money = "$ " + value;
+            return money;
+        }
+
     </script>
 </body>
 </html>

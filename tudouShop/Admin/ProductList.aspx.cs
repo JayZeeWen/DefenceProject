@@ -57,10 +57,10 @@ namespace EShop
             //类型数据源
             BLL.T_Type typebll = new BLL.T_Type ();
             DataTable dt = typebll.GetAllList().Tables[0];
-            ddlType.DataSource = dt;
-            ddlType.DataTextField = "TName";
-            ddlType.DataValueField = "TID";
-            ddlType.DataBind();
+            //ddlType.DataSource = dt;
+            //ddlType.DataTextField = "TName";
+            //ddlType.DataValueField = "TID";
+            //ddlType.DataBind();
 
             //品牌数据源
             BLL.T_Brand brandBll = new BLL.T_Brand();
@@ -98,14 +98,14 @@ namespace EShop
                 int rowID = Convert.ToInt32(Grid1.DataKeys[rowIndex][0]);
                 DataRow row = FindRowByID(rowID);
 
-                //UpdateDataRow(modifiedDict[rowIndex], row);
+                UpdateDataRow(modifiedDict[rowIndex], row);
             }
 
             BindGrid();
 
             //labResult.Text = "用户修改的数据：" + Grid1.GetModifiedData().ToString(Newtonsoft.Json.Formatting.None);
 
-            Alert.Show("数据保存成功！（表格数据已重新绑定）");
+            Alert.Show("数据保存成功!");
         }
 
         protected string GetEditUrl(object id, object name)
@@ -130,12 +130,55 @@ namespace EShop
             DataTable table = GetSourceTable();
             foreach (DataRow row in table.Rows)
             {
-                if (Convert.ToInt32(row["Id"]) == rowID)
+                if (Convert.ToInt32(row["ProId"]) == rowID)
                 {
                     return row;
                 }
             }
             return null;
+        }
+
+        private static void UpdateDataRow(Dictionary<string, object> rowDict, DataRow rowData)
+        {
+            BLL.T_Products probll = new BLL.T_Products();
+            Model.T_Products pro = probll.GetModel(Convert.ToInt32(rowData["ProID"]));
+
+            // 商品名称
+            if (rowDict.ContainsKey("ProName"))
+            {
+                pro.ProName = Convert.ToString(rowDict["ProName"]);
+            }
+
+            // 商品价格
+            if (rowDict.ContainsKey("Price"))
+            {
+                pro.Price = Convert.ToDecimal(rowDict["Price"]);
+            }
+
+            // 销售积分
+            if (rowDict.ContainsKey("SalePoint"))
+            {
+                pro.SalePoint = Convert.ToInt32(rowDict["SalePoint"]);
+            }
+
+            // 库存
+            if (rowDict.ContainsKey("Stock"))
+            {
+                pro.Stock = Convert.ToInt32(rowDict["Stock"]);
+            }
+
+            // 品牌
+            if (rowDict.ContainsKey("BraID"))
+            {
+                pro.BraID = Convert.ToInt32(rowDict["BraID"]);
+            }
+            // 上架日期
+            if (rowDict.ContainsKey("ShelveDate"))
+            {
+               pro.ShelveDate = Convert.ToDateTime( rowDict["ShelveDate"] );
+            }
+            probll.Update(pro);
+            
         }
 
         

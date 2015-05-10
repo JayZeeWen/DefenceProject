@@ -121,13 +121,13 @@ namespace EShop {
         protected global::FineUI.Button btnSave;
         
         /// <summary>
-        /// ddlType 控件。
+        /// txtProName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList ddlType;
+        protected global::FineUI.TextBox txtProName;
         
         /// <summary>
         /// ddlBrand 控件。
@@ -137,6 +137,33 @@ namespace EShop {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.DropDownList ddlBrand;
+        
+        /// <summary>
+        /// txtPrice 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextBox txtPrice;
+        
+        /// <summary>
+        /// txtSaslePoint 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextBox txtSaslePoint;
+        
+        /// <summary>
+        /// txtStrock 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextBox txtStrock;
         
         /// <summary>
         /// DatePicker1 控件。
