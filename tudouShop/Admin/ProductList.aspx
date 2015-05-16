@@ -24,7 +24,7 @@
                     </Content>
                 </f:Panel>
                 <f:Panel runat="server" ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" EnableCollapse="false"
-                    Width="140px" Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="5px">
+                    Width="140px" Title="内容管理" ShowBorder="true" ShowHeader="true" BodyPadding="5px">
                     <Items>
                         <f:HyperLink NavigateUrl="~/admin/ProductList.aspx" runat="server" Text="商品管理"></f:HyperLink>
                         <f:HyperLink NavigateUrl="~/admin/userlist.aspx" runat="server" Text="会员管理"></f:HyperLink>
