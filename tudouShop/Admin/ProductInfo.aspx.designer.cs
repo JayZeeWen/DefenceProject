@@ -112,39 +112,57 @@ namespace tudouShop.Admin {
         protected global::FineUI.TextBox txtProName;
         
         /// <summary>
-        /// txtPrice 控件。
+        /// nbxPrice 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox txtPrice;
+        protected global::FineUI.NumberBox nbxPrice;
         
         /// <summary>
-        /// NumberBox1 控件。
+        /// nbxSalePoint 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.NumberBox NumberBox1;
+        protected global::FineUI.NumberBox nbxSalePoint;
         
         /// <summary>
-        /// DatePicker1 控件。
+        /// ddlBrand 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DatePicker DatePicker1;
+        protected global::FineUI.DropDownList ddlBrand;
         
         /// <summary>
-        /// HtmlEditor1 控件。
+        /// nbxStack 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.HtmlEditor HtmlEditor1;
+        protected global::FineUI.NumberBox nbxStack;
+        
+        /// <summary>
+        /// dtpShelveDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DatePicker dtpShelveDate;
+        
+        /// <summary>
+        /// txtDesc 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea txtDesc;
     }
 }

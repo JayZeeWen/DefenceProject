@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="EShop.ProductList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="EShop.ProductList"  %>
 
 <!DOCTYPE html>
 
@@ -49,7 +49,7 @@
                             </Toolbars>
                             <Columns>
                                 <f:RowNumberField />
-                                <f:RenderField Width="200px" TextAlign="Center" ColumnID="ProName" DataField="ProName" FieldType="String"
+                                <f:RenderField Width="260px" TextAlign="Center" ColumnID="ProName" DataField="ProName" FieldType="String"
                                     HeaderText="商品名称">
                                     <Editor>
                                         <f:TextBox ID="txtProName" Required="true" runat="server">
@@ -87,17 +87,15 @@
                                         </f:DatePicker>
                                     </Editor>
                                 </f:RenderField>
-                                <f:BoundField DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>
+                               <%-- <f:BoundField DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>--%>
                                 <f:LinkButtonField HeaderText="&nbsp;" TextAlign="Center" Width="60px" ConfirmText="删除选中行？" ConfirmTarget="Top"
                                     CommandName="Del" Icon="Delete" />
-                                <f:WindowField ColumnID="ProID" Width="60px" WindowID="InfoWindows" HeaderText="编辑"
-                                    Icon="Pencil" ToolTip="编辑" DataTextFormatString="{0}" DataIFrameUrlFields="ProID"
-                                    DataIFrameUrlFormatString="ProductInfo.aspx?id={0}&t=1" DataWindowTitleField="ProName" TextAlign="Center"
-                                    DataWindowTitleFormatString="编辑 - {0}" />
+                                <f:WindowField ColumnID="ProID" Width="60px" WindowID="InfoWindows" Icon="Pencil" ToolTip="编辑" DataTextFormatString="{0}" DataIFrameUrlFields="ProID"
+                                    DataIFrameUrlFormatString="ProductInfo.aspx?id={0}&t=1" DataWindowTitleField="ProName" TextAlign="Center" DataWindowTitleFormatString="编辑 - {0}" />
                             </Columns>
                         </f:Grid>
                         <f:Window ID="InfoWindows" Title="编辑" Hidden="true" EnableIFrame="true" runat="server"
-                            CloseAction="HidePostBack" EnableMaximize="true" EnableResize="true" Target="Top" IsModal="True" Width="850px" Height="450px">
+                            CloseAction="HidePostBack" EnableMaximize="true" EnableResize="true" Target="Top" IsModal="True" Width="600px" Height="350px">
                         </f:Window>
                     </Items>
                 </f:Panel>
