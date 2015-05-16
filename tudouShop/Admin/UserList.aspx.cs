@@ -32,7 +32,7 @@ namespace tudouShop.Admin
         private DataTable GetSourceTable()
         {
             EShop.BLL.T_Users userBLl = new EShop.BLL.T_Users();
-            string condition = " state = 0";
+            string condition = " state != -1";
             //获取数据总条数
             Grid1.RecordCount = userBLl.GetRecordCount(condition);
             //获取分页数据
@@ -75,12 +75,14 @@ namespace tudouShop.Admin
 
         protected void Grid1_RowCommand(object sender, GridCommandEventArgs e)
         {
-            if (e.CommandName == "Del")
+            if (e.CommandName == "Add")
             {
                 int rowID = Convert.ToInt32(Grid1.DataKeys[e.RowIndex][0].ToString());
-                EShop.BLL.T_Products probll = new EShop.BLL.T_Products();
-                probll.Delete(rowID);
-                Alert.Show("成功删除");
+                EShop.BLL.T_Users userbll = new EShop.BLL.T_Users();
+                EShop.Model.T_Users user = userbll.GetModel(rowID);
+                user.state = 1;
+                userbll.Update(user);
+                Alert.Show("成功激活");
                 BindGrid();
             }
         }

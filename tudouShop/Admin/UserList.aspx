@@ -38,7 +38,7 @@
                                 <f:Toolbar ID="Toolbar1" runat="server">
                                     <Items>
                                         <f:Button ID="btnNew" Text="新增会员" Icon="Add" EnablePostBack="false" runat="server">
-                                        </f:Button>
+                                        </f:Button>                                        
                                         <f:ToolbarFill runat="server"></f:ToolbarFill>
                                         <f:Button ID="btnSave" runat="server" Text="保存数据" OnClick="btnSave_Click">
                                         </f:Button>
@@ -60,7 +60,11 @@
                                 <f:BoundField DataField="Name" HeaderText="姓名" TextAlign="Center"></f:BoundField>
                                 <f:BoundField DataField="Sex" Width="60" HeaderText="性别" TextAlign="Center"></f:BoundField>
                                 <f:BoundField DataField="Phone" HeaderText="电话"  TextAlign="Center"></f:BoundField>
-                               <%-- <f:BoundField DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>--%>
+                                <f:RenderField ColumnID="state" DataField="state" HeaderText="状态"  RendererFunction="renderState" TextAlign="Center">
+                                   
+                                </f:RenderField>
+                                <f:LinkButtonField HeaderText="&nbsp;" TextAlign="Center" Width="60px" ConfirmText="确定激活该账户？" ConfirmTarget="Top"
+                                    CommandName="Add" Icon="Add" />
                             </Columns>
                         </f:Grid>
                         <f:Window ID="InfoWindows" Title="编辑" Hidden="true" EnableIFrame="true" runat="server"
@@ -79,9 +83,13 @@
             var tid = value;
             return EShop.ProductList.getTypeName(tid).value;
         }
-        function renderBrand(value) {
-            var bid = value;
-            return EShop.ProductList.getBrandName(bid).value;
+        function renderState(value) {
+            if (value == 0) {
+                return "未激活";
+            } else {
+                return "已激活";
+            }
+            
         }
 
         function renderMoney(value) {
