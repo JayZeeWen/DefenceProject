@@ -134,9 +134,9 @@ namespace EShop.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public DataSet GetAllList()
+		public DataSet GetAllList(string where)
 		{
-			return GetList("");
+            return GetList(where);
 		}
 
 		/// <summary>

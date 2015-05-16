@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="EShop.ProductList"  %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserList.aspx.cs" Inherits="tudouShop.Admin.UserList" %>
 
 <!DOCTYPE html>
 <html>
@@ -33,12 +32,12 @@
                 <f:Panel runat="server" ID="panelCenterRegion" RegionPosition="Center" ShowBorder="true" BodyPadding="5px" Title=" ">
                     <Items>
                         <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="true" Title="商品列表" runat="server" EnableCollapse="false"
-                            DataKeyNames="ProID,ProName" PageSize="13" AllowPaging="true" IsDatabasePaging="true" OnPageIndexChange="Grid1_PageIndexChange"
+                            DataKeyNames="UserID,Account" PageSize="13" AllowPaging="true" IsDatabasePaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                             AllowCellEditing="true" ClicksToEdit="2" AllowSorting="true" OnRowCommand="Grid1_RowCommand">
                             <Toolbars>
                                 <f:Toolbar ID="Toolbar1" runat="server">
                                     <Items>
-                                        <f:Button ID="btnNew" Text="新增商品" Icon="Add" EnablePostBack="false" runat="server">
+                                        <f:Button ID="btnNew" Text="新增会员" Icon="Add" EnablePostBack="false" runat="server">
                                         </f:Button>
                                         <f:ToolbarFill runat="server"></f:ToolbarFill>
                                         <f:Button ID="btnSave" runat="server" Text="保存数据" OnClick="btnSave_Click">
@@ -48,49 +47,20 @@
                             </Toolbars>
                             <Columns>
                                 <f:RowNumberField />
-                                <f:RenderField Width="260px" TextAlign="Center" ColumnID="ProName" DataField="ProName" FieldType="String"
-                                    HeaderText="商品名称">
+                                <f:RenderField Width="200px" TextAlign="Center" ColumnID="Account" DataField="Account" FieldType="String"
+                                    HeaderText="用户名">
                                     <Editor>
                                         <f:TextBox ID="txtProName" Required="true" runat="server">
                                         </f:TextBox>
                                     </Editor>
                                 </f:RenderField>
-                                <f:RenderField ColumnID="BraID" DataField="BraID" HeaderText="品牌" FieldType="Int" RendererFunction="renderBrand" TextAlign="Center">
-                                    <Editor>
-                                        <f:DropDownList runat="server" ID="ddlBrand" Required="true"></f:DropDownList>
-                                    </Editor>
-                                </f:RenderField>
-
-                                <f:RenderField TextAlign="Center" ColumnID="Price" DataField="Price" RendererFunction="renderMoney" FieldType="Float" HeaderText="价格">
-                                    <Editor>
-                                        <f:TextBox ID="txtPrice" Required="true" runat="server">
-                                        </f:TextBox>
-                                    </Editor>
-                                </f:RenderField>
-                                <f:RenderField TextAlign="Center" ColumnID="SalePoint" DataField="SalePoint" FieldType="Int" HeaderText="销售积分">
-                                    <Editor>
-                                        <f:TextBox ID="txtSaslePoint" Required="true" runat="server">
-                                        </f:TextBox>
-                                    </Editor>
-                                </f:RenderField>
-                                <f:RenderField TextAlign="Center" ColumnID="Stock" DataField="Stock" FieldType="Int" HeaderText="库存">
-                                    <Editor>
-                                        <f:TextBox ID="txtStrock" Required="true" runat="server">
-                                        </f:TextBox>
-                                    </Editor>
-                                </f:RenderField>
-                                <f:RenderField Width="120px" ColumnID="ShelveDate" DataField="ShelveDate" FieldType="Date"
-                                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="上架日期" TextAlign="Center">
-                                    <Editor>
-                                        <f:DatePicker ID="DatePicker1" Required="true" runat="server">
-                                        </f:DatePicker>
-                                    </Editor>
-                                </f:RenderField>
+                               <f:BoundField DataField="Pwd" HeaderText="登陆密码" TextAlign="Center"></f:BoundField>
+                                <f:BoundField DataField="PFP" HeaderText="支付密码" TextAlign="Center"></f:BoundField>
+                                <f:BoundField DataField="Points" HeaderText="积分" TextAlign="Center"></f:BoundField>
+                                <f:BoundField DataField="Name" HeaderText="姓名" TextAlign="Center"></f:BoundField>
+                                <f:BoundField DataField="Sex" Width="60" HeaderText="性别" TextAlign="Center"></f:BoundField>
+                                <f:BoundField DataField="Phone" HeaderText="电话"  TextAlign="Center"></f:BoundField>
                                <%-- <f:BoundField DataField="des" DataFormatString="{0}" HeaderText="描述"></f:BoundField>--%>
-                                <f:LinkButtonField HeaderText="&nbsp;" TextAlign="Center" Width="60px" ConfirmText="删除选中行？" ConfirmTarget="Top"
-                                    CommandName="Del" Icon="Delete" />
-                                <f:WindowField ColumnID="ProID" Width="60px" WindowID="InfoWindows" Icon="Pencil" ToolTip="编辑" DataTextFormatString="{0}" DataIFrameUrlFields="ProID"
-                                    DataIFrameUrlFormatString="ProductInfo.aspx?id={0}&t=1" DataWindowTitleField="ProName" TextAlign="Center" DataWindowTitleFormatString="编辑 - {0}" />
                             </Columns>
                         </f:Grid>
                         <f:Window ID="InfoWindows" Title="编辑" Hidden="true" EnableIFrame="true" runat="server"
