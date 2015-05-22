@@ -9,22 +9,37 @@ using FineUI.Examples;
 using 土豆购物;
 using EShop.BLL;
 using System.Data.SqlClient;
+using FineUI;
 
 namespace EShop
 {
     public partial class CheckOut : System.Web.UI.Page
     {
+        long x;
         public long LoginID
         {
+
             get
             {
-                return 1;
+                if (Session["LoginUser"] != null)
+                {
+                    x = long.Parse(Session["LoginUser"].ToString());
+
+                }
+                return x;
             }
-        }
+        } 
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindAddressDataSource();
-            BindCartDataSource();
+            if (LoginID != 0)
+            {
+                BindAddressDataSource();
+                BindCartDataSource();
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>showtips();</script>");
+            }
         }
 
         public void BindAddressDataSource()
@@ -61,6 +76,12 @@ namespace EShop
             ltlTotal.Text = "$" + money;
             SetPage(PageIndex, pagecount);//分页实现
             rptCart.DataBind(); 
+        }
+
+        public void nullsession()
+        {
+            Confirm.Show("请先登陆");
+            Response.Redirect("~/aspx/Login.aspx");
         }
 
         #region 分页

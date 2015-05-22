@@ -82,6 +82,8 @@
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\ProductInfo.aspx" />
     <Content Include="Admin\ProductList.aspx" />
+    <Content Include="Admin\userInfo.aspx" />
+    <Content Include="Admin\UserList.aspx" />
     <Content Include="aspx\Login.aspx" />
     <Content Include="aspx\Register.aspx" />
     <Content Include="aspx\UserEmailCheck.aspx" />
@@ -390,6 +392,8 @@
     <Content Include="images\sheship\20140930162637_84944.jpg" />
     <Content Include="images\sheship\20140930162721_86035.jpg" />
     <Content Include="images\sheship\20140930171427_22208.jpg" />
+    <Content Include="images\smile.png" />
+    <Content Include="images\success.png" />
     <Content Include="images\title.gif" />
     <Content Include="images\tu4a.png" />
     <Content Include="images\tu5.png" />
@@ -768,6 +772,7 @@
     <Content Include="js\gdt.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\scrollImg.js" />
+    <Content Include="Payment.aspx" />
     <Content Include="scripts\ajax.js" />
     <Content Include="scripts\ckeditor\adapters\jquery.js" />
     <Content Include="scripts\ckeditor\ckeditor.js" />
@@ -998,6 +1003,7 @@
     <Content Include="scripts\webtry_roll.js" />
     <Content Include="ShoppingCart.aspx" />
     <Content Include="Special.aspx" />
+    <Content Include="Success.aspx" />
     <Content Include="templates\Front\404.html" />
     <Content Include="templates\Front\Brand.html" />
     <Content Include="templates\Front\CheckOut.html" />
@@ -1041,6 +1047,20 @@
     </Compile>
     <Compile Include="Admin\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\userInfo.aspx.cs">
+      <DependentUpon>userInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\userInfo.aspx.designer.cs">
+      <DependentUpon>userInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="aspx\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -1103,6 +1123,13 @@
     <Compile Include="Male.ashx.cs">
       <DependentUpon>Male.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
@@ -1120,6 +1147,13 @@
     </Compile>
     <Compile Include="Special2.ashx.cs">
       <DependentUpon>Special2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1189,7 +1223,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2840</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/tudouShop</IISUrl>
+          <IISUrl>http://localhost/DefenceProject</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

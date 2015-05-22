@@ -21,11 +21,11 @@
                     <div class="footer-left">
                         <ul>
                             <li><a href="index.ashx">首页</a> <span></span></li>
-                            <li><a href="male.ashx">男士</a> <span></span></li>
-                            <li><a href="femal.ashx">女生</a> <span></span></li>
-                            <li><a href="dzcp.html">电子产品</a> <span></span></li>
-                            <li><a href="ssp.html">奢饰品</a> <span></span></li>
-                            <li><a href="pinpai.html">品牌</a></li>
+                            <li><a href="Male.ashx">男士</a> <span></span></li>
+                            <li><a href="Female.ashx">女生</a> <span></span></li>
+                            <li><a href="Electronic.ashx">电子产品</a> <span></span></li>
+                            <li><a href="Luxury.ashx">奢饰品</a> <span></span></li>
+                            <li><a href="Brand.ashx">品牌</a></li>
                             <div class="clear"></div>
                         </ul>
                     </div>
@@ -126,7 +126,7 @@
                                         <td class="price"><asp:Literal runat="server" ID="ltlTotal"></asp:Literal></td>
                                     </tr>
                                 </table>
-                                <span class="zi8"><a href="tjgwc.html">提交订单</a></span>
+                                <span class="zi8"><a href="Payment.aspx">提交订单</a></span>
                             </div>
                             <!-- .total -->
                         </div>
@@ -193,7 +193,6 @@
                 <div class="clear"></div>
             </div>
         </div>
-        </div>
 
 		<div class="footer">
             <div class="wrap">
@@ -205,15 +204,22 @@
                 <div class="clear"></div>
             </div>
         </div>
-    </form>
-    <script type="text/javascript">
-        function SelectAddress(d) {
-            var div = d.parentElement;           
-            $('#DivAddress').find("div").removeClass("iconone").addClass("iconbox");    
-            $(div).removeClass().addClass("iconone");
-            alert(cs);
-        }
+        <script type="text/javascript">
+            function SelectAddress(d) {
+                var div = d.parentElement;
+                $('#DivAddress').find("div").removeClass("iconone").addClass("iconbox");
+                $(div).removeClass().addClass("iconone");
+                alert(cs);
+            }
+
+            function showtips() {
+                if (confirm("未发现登陆账户，请先登陆")) {
+                    window.navigate("aspx/login.aspx");
+                }
+            }
     </script>
+    </form>
+    
 </body>
 
 </html>

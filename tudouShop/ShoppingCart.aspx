@@ -24,11 +24,11 @@
                     <div class="footer-left">
                         <ul>
                             <li><a href="index.ashx">首页</a> <span></span></li>
-                            <li><a href="nanshi.html">男士</a> <span></span></li>
-                            <li><a href="nvshi.html">女生</a> <span></span></li>
-                            <li><a href="dzcp.html">电子产品</a> <span></span></li>
-                            <li><a href="ssp.html">奢饰品</a> <span></span></li>
-                            <li><a href="pinpai.html">品牌</a></li>
+                            <li><a href="Male.ashx">男士</a> <span></span></li>
+                            <li><a href="Female.ashx">女生</a> <span></span></li>
+                            <li><a href="Electronic.ashx">电子产品</a> <span></span></li>
+                            <li><a href="Luxury.ashx">奢饰品</a> <span></span></li>
+                            <li><a href="Brand.ashx">品牌</a></li>
                             <div class="clear"></div>
                         </ul>
                     </div>
@@ -37,6 +37,7 @@
                         <ul>
                             <li><a href="aspx/login.aspx">登录</a><span> </span></li>
                             <li><a href="aspx/Register.aspx">注册</a></li>
+                            <li><a href="ShoppingCart.aspx">查看购物车</a></li>
                         </ul>
                     </div>
                     <div class="clear"></div>
@@ -320,51 +321,58 @@
                 <div class="clear"></div>
             </div>
         </div>
-    </form>
-    <script type="text/javascript">
-        //限制数量只能输入数字
-        function onlyNum(d) {
-            d.value = d.value.replace(/\D/g, '');
-        }
-
-        //计算数量与单价的乘积
-        function total(d,proid) {
-            //alert($("#quantity").val());
-            // alert(d.value);
-            var str = d.parentElement.parentElement.cells[2].innerHTML.substr(1);
-            //alert(str);
-            var price = str * d.value;
-            d.parentElement.parentElement.cells[4].innerHTML = "$" + fmoney(price, 2);
-            submit(d.value,proid);
-        }
-
-        function submit(quantity,proid) {
-            EShop.ShoppingCart.Edit(proid, quantity);
-        }
-
-        //计算所有商品的金额
-        function fmoney(s, n) {
-            n = n > 0 && n <= 20 ? n : 2;
-            s = parseFloat((s + "").replace(/[^\d\.-]/g, "")).toFixed(n) + "";
-            var l = s.split(".")[0].split("").reverse(),
-            r = s.split(".")[1];
-            t = "";
-            for (i = 0; i < l.length; i++) {
-                t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length ? "," : "");
+        <script type="text/javascript">
+            //限制数量只能输入数字
+            function onlyNum(d) {
+                d.value = d.value.replace(/\D/g, '');
             }
-            return t.split("").reverse().join("") + "." + r;
-        }
 
-        function DelProduct(proid, d) {
-            if (confirmL("确定将商品移出购物车？", function () {
-                EShop.ShoppingCart.del(proid);
-                var t = d.parentElement.parentElement;
-                t.parentNode.removeChild(t);
-                return true;
-            }))
-            { }
-        }
+            //计算数量与单价的乘积
+            function total(d, proid) {
+                //alert($("#quantity").val());
+                // alert(d.value);
+                var str = d.parentElement.parentElement.cells[2].innerHTML.substr(1);
+                //alert(str);
+                var price = str * d.value;
+                d.parentElement.parentElement.cells[4].innerHTML = "$" + fmoney(price, 2);
+                submit(d.value, proid);
+            }
+
+            function submit(quantity, proid) {
+                EShop.ShoppingCart.Edit(proid, quantity);
+            }
+
+            //计算所有商品的金额
+            function fmoney(s, n) {
+                n = n > 0 && n <= 20 ? n : 2;
+                s = parseFloat((s + "").replace(/[^\d\.-]/g, "")).toFixed(n) + "";
+                var l = s.split(".")[0].split("").reverse(),
+                r = s.split(".")[1];
+                t = "";
+                for (i = 0; i < l.length; i++) {
+                    t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length ? "," : "");
+                }
+                return t.split("").reverse().join("") + "." + r;
+            }
+
+            function DelProduct(proid, d) {
+                if (confirmL("确定将商品移出购物车？", function () {
+                    EShop.ShoppingCart.del(proid);
+                    var t = d.parentElement.parentElement;
+                    t.parentNode.removeChild(t);
+                    return true;
+                }))
+                { }
+            }
+
+            function showtips() {
+                if (confirm("未发现登陆账户，请先登陆")) {
+                    window.navigate("aspx/login.aspx");
+                }
+            }
     </script>
+    </form>
+    
 </body>
 </html>
 

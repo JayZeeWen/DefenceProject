@@ -14,42 +14,78 @@ namespace EShop
 {
     public partial class ShoppingCart :System.Web.UI.Page
     {
+        long x;
+        public long LoginID
+        {
+
+            get
+            {
+                if (Session["LoginUser"] != null)
+                {
+                    x = long.Parse(Session["LoginUser"].ToString());
+
+                }
+                return x;
+            }
+        }
         
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Bind();
             AjaxPro.Utility.RegisterTypeForAjax(typeof(ShoppingCart));
+            if (LoginID != 0)
+            {
+                Bind();                
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>showtips();</script>");
+            }
         }
         void Bind()
         {
-            int size = 5;
-            int PageIndex = 1;
-            int totalcount = Convert.ToInt32( SqlHelper.ExecuteScalar("select COUNT(*) from T_Cart where UserID=1"));
-            int pagecount = (int)Math.Ceiling(totalcount / Convert.ToDouble(size));//获得页数
-
-            if (!string.IsNullOrEmpty(Request.QueryString["p"]))
+            DataTable dt = SqlHelper.ExecuteDataTable("select * from t_Cart where UserID= @UserId"
+                                      , new SqlParameter("@UserId", LoginID));
+            if(dt.Rows.Count>0)
             {
-                PageIndex = Convert.ToInt32(Request.QueryString["p"]);
-            }
-            //分页查询
-            DataTable dt = SqlHelper.ExecuteDataTable(@"select * from (
+                int size = 5;
+                int PageIndex = 1;
+                int totalcount = Convert.ToInt32(SqlHelper.ExecuteScalar("select COUNT(*) from T_Cart where UserID=1"));
+                int pagecount = (int)Math.Ceiling(totalcount / Convert.ToDouble(size));//获得页数
+
+                if (!string.IsNullOrEmpty(Request.QueryString["p"]))
+                {
+                    PageIndex = Convert.ToInt32(Request.QueryString["p"]);
+                }
+                //分页查询
+                DataTable dtsec = SqlHelper.ExecuteDataTable(@"select * from (
                                                        select c.Userid as UserID,c.ProID, Quantity,ProName,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
                                                        from t_Cart c left join T_Products p on c.ProID=p.ProID )as s  
-                                                       where  UserID= 1 and s.num between @Start and @End "
-                                                    ,new SqlParameter("@Start",(PageIndex - 1) * size + 1)
-                                                    , new SqlParameter("@End", PageIndex * size));
-            //总价
-            decimal money = Convert.ToDecimal(SqlHelper.ExecuteScalar(@"select SUM(s.Price*s.Quantity) from(
+                                                       where  UserID= @UserId and s.num between @Start and @End ", new SqlParameter("@UserId", LoginID)
+                                                        , new SqlParameter("@Start", (PageIndex - 1) * size + 1)
+                                                        , new SqlParameter("@End", PageIndex * size));
+                //总价
+                decimal money = Convert.ToDecimal(SqlHelper.ExecuteScalar(@"select SUM(s.Price*s.Quantity) from(
                                                                        select c.Userid as UserID, Quantity,ProName,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
                                                                        from t_Cart c left join T_Products p on c.ProID=p.ProID )as s  
-                                                                       where  UserID= @UserId", new SqlParameter("@UserId", 1))
-                                                    );
-            ltlPrice.Text = "$" + money;
-            ltlTotal.Text = "$" + money;
-            SetPage(PageIndex, pagecount);//分页实现
-            rptCart.DataSource = dt;
-            rptCart.DataBind();
+                                                                       where  UserID= @UserId", new SqlParameter("@UserId", LoginID))
+                                                        );
+                ltlPrice.Text = "$" + money;
+                ltlTotal.Text = "$" + money;
+                SetPage(PageIndex, pagecount);//分页实现
+                rptCart.DataSource = dtsec;
+                rptCart.DataBind();
+            }
+            else
+            {
+
+            }
+        }
+
+        [AjaxPro.AjaxMethod]
+        public void nullsession()
+        {
+            Response.Redirect("");
         }
 
         #region 分页
