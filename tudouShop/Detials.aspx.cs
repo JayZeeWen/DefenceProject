@@ -65,6 +65,7 @@ namespace EShop
                         , new SqlParameter("@UserID", loginUser.UserID)
                         , new SqlParameter("@ProID", product.ProID)
                         , new SqlParameter("Quantity", 1));
+
                     Alert.ShowInTop("添加购物车成功");
                 }
                 else

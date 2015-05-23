@@ -31,6 +31,7 @@ namespace EShop
         } 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (LoginID != 0)
             {
                 BindAddressDataSource();
@@ -78,6 +79,17 @@ namespace EShop
             rptCart.DataBind(); 
         }
 
+        protected void order_Click(object sender, EventArgs e)
+        {
+            DateTime createtime = System.DateTime.Now;
+            string state = "0";
+            SqlHelper.ExecuteNonQuery("insert into T_Orders(UserID,OrderDate,state) values(@UserID,@OrderDate,@state)"
+                        , new SqlParameter("@UserID", LoginID)
+                        , new SqlParameter("@OrderDate", createtime)
+                        , new SqlParameter("@state", state));
+            Response.Redirect("~/Payment.aspx");
+        }
+
         public void nullsession()
         {
             Confirm.Show("请先登陆");
@@ -112,8 +124,7 @@ namespace EShop
 
         }
         #endregion
-
-        
-
+        // 删除购物车商品
+      
     }
 }

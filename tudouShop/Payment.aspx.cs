@@ -32,6 +32,7 @@ namespace tudouShop
         {
             if (LoginID != 0)
             {
+              
                 BindAddressDataSource();
                 BindCartDataSource();
             }
@@ -40,6 +41,8 @@ namespace tudouShop
                 nullsession();
             }
         }
+    
+
         public void BindAddressDataSource()
         {
             EShop.BLL.T_DeliveryAddress deliverbll = new T_DeliveryAddress();

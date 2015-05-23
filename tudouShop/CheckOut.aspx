@@ -91,7 +91,7 @@
                                         <td><%#Eval("Quantity") %></td>
                                         <td class="bg subtotal">$<%#Convert.ToDecimal( Eval("Price")) * Convert.ToDecimal( Eval("Quantity")) %></td>
                                         <td class="close"><a title="close" class="close" href="#"></a></td>
-                                        <td class="edit"><a title="Edit" href="#">删除</a></td>
+                                       <%-- <td class="edit"><a title="Edit" href="javascript:void(0);" onclick="DelProduct(<%#Eval("ProID") %>,this);">删除</a></td>--%>
                                     </tr>
 
                                 </ItemTemplate>
@@ -126,7 +126,8 @@
                                         <td class="price"><asp:Literal runat="server" ID="ltlTotal"></asp:Literal></td>
                                     </tr>
                                 </table>
-                                <span class="zi8"><a href="Payment.aspx">提交订单</a></span>
+                                <span class="zi8"><asp:Button ID="order" runat="server" OnClick="order_Click" Text="提交订单" /></span>
+                               <%-- <span class="zi8" onclick="order_Click"><a href="Payment.aspx">提交订单</a></span>--%>
                             </div>
                             <!-- .total -->
                         </div>

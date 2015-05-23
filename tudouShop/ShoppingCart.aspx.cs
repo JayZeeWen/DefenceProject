@@ -85,7 +85,9 @@ namespace EShop
         [AjaxPro.AjaxMethod]
         public void nullsession()
         {
-            Response.Redirect("");
+            Confirm.Show("请先登陆");
+            Response.Redirect("~/aspx/Login.aspx");
+           
         }
 
         #region 分页
