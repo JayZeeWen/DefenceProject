@@ -77,7 +77,7 @@
 	      </tr>
 	      <tr>
           <td>支付密码：</td>
-          <td><input type="text" name="PFP" value=""/><span><asp:Label ID="lblerror" runat="server" Text=""  ForeColor="Red"></asp:Label></span></td>
+          <td><input type="password" name="PFP" value=""/><span><asp:Label ID="lblerror" runat="server" Text=""  ForeColor="Red"></asp:Label></span></td>
             </tr>                                                               
 		    <tr>
              <td><span><asp:Button ID="submit" runat="server" OnClick="submit_Click" Text="确认付款" /></span></td>

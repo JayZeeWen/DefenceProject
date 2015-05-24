@@ -48,6 +48,7 @@
        <p>付款金额：</p> 
           
        <p>购物愉快<img src="images/smile.png" /></p>
+       <span><a href="Orders.aspx">查看已购买商品</a></span>
            
        </div><!-- .grid_12 -->
 

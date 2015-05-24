@@ -772,6 +772,7 @@
     <Content Include="js\gdt.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\scrollImg.js" />
+    <Content Include="Orders.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="scripts\ajax.js" />
     <Content Include="scripts\ckeditor\adapters\jquery.js" />
@@ -1014,6 +1015,7 @@
     <Content Include="templates\Front\login.html" />
     <Content Include="templates\Front\Luxury.html" />
     <Content Include="templates\Front\Male.html" />
+    <Content Include="templates\Front\Orders.html" />
     <Content Include="templates\Front\Register.html" />
     <Content Include="templates\Front\Register2.html" />
     <Content Include="templates\Front\ShoppingCart.html" />
@@ -1122,6 +1124,13 @@
     </Compile>
     <Compile Include="Male.ashx.cs">
       <DependentUpon>Male.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
     </Compile>
     <Compile Include="Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>

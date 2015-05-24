@@ -87,9 +87,25 @@ namespace EShop
                         , new SqlParameter("@UserID", LoginID)
                         , new SqlParameter("@OrderDate", createtime)
                         , new SqlParameter("@state", state));
+            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+            foreach (RepeaterItem item in rptCart.Items)
+            {
+                System.Web.UI.WebControls.CheckBox cb = item.FindControl("CheckBox1") as System.Web.UI.WebControls.CheckBox;               
+                if (cb.Checked)
+                {
+                    int id = int.Parse(cb.Attributes["dataID"]);
+                    int Quantity = int.Parse(cb.Attributes["Quantity"]);
+
+                    SqlHelper.ExecuteNonQuery("insert into OrderDetials(OrderID,ProductID,Quantity) values(@OrderID,@ProductID,@Quantity)"
+                        , new SqlParameter("@OrderID", orderid)
+                        , new SqlParameter("@ProductID", id), new SqlParameter("@Quantity", Quantity));
+
+                }              
+
+            }
             Response.Redirect("~/Payment.aspx");
         }
-        //随便测试 ，你就是二货，哈哈
+       
         public void nullsession()
         {
             Confirm.Show("请先登陆");

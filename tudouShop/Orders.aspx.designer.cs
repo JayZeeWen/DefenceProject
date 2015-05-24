@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace EShop {
+namespace tudouShop {
     
     
-    public partial class CheckOut {
+    public partial class Orders {
         
         /// <summary>
         /// form1 控件。
@@ -31,24 +31,14 @@ namespace EShop {
         protected global::FineUI.PageManager pgm1;
         
         /// <summary>
-        /// rptOrder 控件。
+        /// rptorders 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-
-        protected global::System.Web.UI.WebControls.Repeater rptAddress;
-
-        /// <summary>
-        /// rptCart 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptCart;
-
+        protected global::System.Web.UI.WebControls.Repeater rptorders;
+        
         /// <summary>
         /// ltlPage 控件。
         /// </summary>
@@ -57,14 +47,5 @@ namespace EShop {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltlPage;
-
-        /// <summary>
-        /// ltlTotal 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlTotal;
     }
 }
