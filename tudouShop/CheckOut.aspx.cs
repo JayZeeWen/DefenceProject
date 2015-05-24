@@ -89,7 +89,7 @@ namespace EShop
                         , new SqlParameter("@state", state));
             Response.Redirect("~/Payment.aspx");
         }
-
+        //随便测试 ，你就是二货，哈哈
         public void nullsession()
         {
             Confirm.Show("请先登陆");
