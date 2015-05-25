@@ -61,12 +61,15 @@ namespace EShop
             {
                 if (product != null)
                 {
+                    string quantity = Request.Params.GetValues("txtquantity")[0];
+                    int quan = Convert.ToInt32(quantity);
                     SqlHelper.ExecuteNonQuery("insert into t_Cart(UserID,ProID,Quantity) values(@UserID,@ProID,@Quantity)"
                         , new SqlParameter("@UserID", loginUser.UserID)
                         , new SqlParameter("@ProID", product.ProID)
-                        , new SqlParameter("Quantity", 1));
+                        , new SqlParameter("Quantity", quan));
 
                     Alert.ShowInTop("添加购物车成功");
+                    
                 }
                 else
                 {

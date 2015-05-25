@@ -230,7 +230,7 @@
                                         <span class="newsletter">
                                             <input type="submit" id="submit2" value="添加" />
                                         </span>
-                                        <input type="text" name="" class="number" value="1" />
+                                        <input type="text" name="txtquantity" class="number" value="1" />
                                         <span>添加商品数量:</span>
                                     </div>
                                     <div class="clear"></div>
