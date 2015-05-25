@@ -16,11 +16,11 @@
                 <div class="footer-left">
                     <ul>
                         <li><a href="index.ashx">首页</a> <span></span></li>
-                        <li><a href="nanshi.html">男士</a> <span></span></li>
-                        <li><a href="nvshi.html">女生</a> <span></span></li>
-                        <li><a href="dzcp.html">电子产品</a> <span></span></li>
-                        <li><a href="ssp.html">奢饰品</a> <span></span></li>
-                        <li><a href="pinpai.html">品牌</a></li>
+                        <li><a href="Male.ashx">男士</a> <span></span></li>
+                        <li><a href="Female.ashx">女生</a> <span></span></li>
+                        <li><a href="Electronic.ashx">电子产品</a> <span></span></li>
+                        <li><a href="Luxury.ashx">奢饰品</a> <span></span></li>
+                        <li><a href="Brand.ashx">品牌</a></li>
                         <div class="clear"></div>
                     </ul>
                 </div>
@@ -28,7 +28,9 @@
                 <div class="top-header-right">
                     <ul>
                         <li><a href="aspx/login.aspx">登录</a><span> </span></li>
-                        <li><a href="aspx/register.html">注册</a></li>
+                        <li><a href="aspx/register.aspx">注册</a></li>
+                        <li><a href="ShoppingCart.aspx">查看购物车</a></li>
+
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -235,7 +237,11 @@
                                 </div>
                                 <!-- .block_cart -->
                                 <div class="soc">
-                                    <span class="error-404-text group"><span class="zi8">
+                                    <span class="error-404-text group">
+                                        <span class="zi8">
+                                        <asp:Button ID="btnPayment" runat="server" Text="立即购买" OnClick="btnPayment_Click" 
+                                            Height="40" Width="155" BackColor="#CC0000" Font-Size="15px" /></span></br>
+                                        <span class="zi8">
                                         <asp:Button ID="btnCheckOut" runat="server" Text="添加到购物车" OnClick="btnCheckOut_Click" 
                                             Height="40" Width="155" BackColor="#CC0000" Font-Size="15px" /></span>
                                 </div>

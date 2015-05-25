@@ -91,8 +91,8 @@
                                         <td><%#Eval("Quantity") %></td>
                                         <td class="bg subtotal">$<%#Convert.ToDecimal( Eval("Price")) * Convert.ToDecimal( Eval("Quantity")) %></td>
                                         <td class="close"><a title="close" class="close" href="#"></a></td>
-                                       <td><asp:CheckBox ID="CheckBox1" runat="server" dataID='<%#Eval("ProID")%>' Quantity='<%#Eval("Quantity") %>' Checked="true" />操作</td>
-                                     <%--   <td><asp:CheckBox ID="CheckBox2" runat="server" Quantity='<%#Eval("Quantity") %>' Checked="true" />数量</td>--%>
+                                    
+                                  
                                     </tr>
 
                                 </ItemTemplate>

@@ -20,20 +20,20 @@
             <div class="wrap">
                 <div class="footer-left">
                     <ul>
-                        <li><a href="index.html">首页</a> <span></span></li>
-                        <li><a href="nanshi.html">男士</a> <span></span></li>
-                        <li><a href="nvshi.html">女士</a> <span></span></li>
-                        <li><a href="dzcp.html">电子产品</a> <span></span></li>
-                        <li><a href="ssp.html">奢饰品</a> <span></span></li>
-                        <li><a href="pinpai.html">品牌</a></li>
+                        <li><a href="index.ashx">首页</a> <span></span></li>
+                        <li><a href="Male.ashx">男士</a> <span></span></li>
+                        <li><a href="Female.ashx">女士</a> <span></span></li>
+                        <li><a href="Electronic.ashx">电子产品</a> <span></span></li>
+                        <li><a href="Luxury.ashx">奢饰品</a> <span></span></li>
+                        <li><a href="Brand.ashx">品牌</a></li>
                         <div class="clear"></div>
                     </ul>
                 </div>
 
                 <div class="top-header-right">
                     <ul>
-                        <li><a href="aspx/login.aspx">登录</a><span> </span></li>
-                        <li><a href="zc.html">注册</a></li>
+                        <li><a href="login.aspx">登录</a><span> </span></li>
+                        <li><a href="register.aspx">注册</a></li>
                     </ul>
                 </div>
                 <div class="clear"></div>

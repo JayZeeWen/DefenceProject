@@ -38,6 +38,7 @@
                             <li><a href="aspx/login.aspx">登录</a><span> </span></li>
                             <li><a href="aspx/Register.aspx">注册</a></li>
                             <li><a href="ShoppingCart.aspx">查看购物车</a></li>
+                            <li><a href="Orders.aspx">已购买的商品</a></li>
                         </ul>
                     </div>
                     <div class="clear"></div>
@@ -81,6 +82,7 @@
                                             <td class="close"><a title="close" class="close" href="#"></a></td>
                                             <td class="edit">
                                                 <a title="Edit" href="javascript:void(0);" onclick="DelProduct(<%#Eval("ProID") %>,this);">删除</a>
+                                                <td><asp:CheckBox ID="CheckBox1" runat="server" dataID='<%#Eval("ProID")%>' Quantity='<%#Eval("Quantity") %>' Checked="true" />操作</td>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -119,7 +121,8 @@
                                         <td class="price"><asp:Literal runat="server" ID="ltlTotal"></asp:Literal></td>
                                     </tr>
                                 </table>
-                                <span class="zi8"><a href="CheckOut.aspx">结算</a></span>
+                                 <span class="zi8"><asp:Button ID="order" runat="server" OnClick="order_Click" Text="结算" /></span>
+                                
                             </div>
                             <!-- .total -->
                         </div>

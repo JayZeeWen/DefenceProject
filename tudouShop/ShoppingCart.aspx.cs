@@ -81,6 +81,32 @@ namespace EShop
 
             }
         }
+        protected void order_Click(object sender, EventArgs e)
+        {
+            DateTime createtime = System.DateTime.Now;
+            string state = "0";
+            SqlHelper.ExecuteNonQuery("insert into T_Orders(UserID,OrderDate,state) values(@UserID,@OrderDate,@state)"
+                        , new SqlParameter("@UserID", LoginID)
+                        , new SqlParameter("@OrderDate", createtime)
+                        , new SqlParameter("@state", state));
+            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+            foreach (RepeaterItem item in rptCart.Items)
+            {
+                System.Web.UI.WebControls.CheckBox cb = item.FindControl("CheckBox1") as System.Web.UI.WebControls.CheckBox;
+                if (cb.Checked)
+                {
+                    int id = int.Parse(cb.Attributes["dataID"]);
+                    int Quantity = int.Parse(cb.Attributes["Quantity"]);
+
+                    SqlHelper.ExecuteNonQuery("insert into OrderDetials(OrderID,ProductID,Quantity) values(@OrderID,@ProductID,@Quantity)"
+                        , new SqlParameter("@OrderID", orderid)
+                        , new SqlParameter("@ProductID", id), new SqlParameter("@Quantity", Quantity));
+
+                }
+
+            }
+            Response.Redirect("~/CheckOut.aspx");
+        }
 
         [AjaxPro.AjaxMethod]
         public void nullsession()

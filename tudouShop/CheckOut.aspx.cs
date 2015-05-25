@@ -52,28 +52,31 @@ namespace EShop
 
         public void BindCartDataSource()
         {
+            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
             int size = 5;
             int PageIndex = 1;
-            int totalcount = Convert.ToInt32(SqlHelper.ExecuteScalar("select COUNT(*) from T_Cart where UserID=@UserID", new SqlParameter("@UserID", LoginID)));
+            int totalcount = Convert.ToInt32(SqlHelper.ExecuteScalar("select COUNT(*) from  OrderDetials where OrderID=@OrderID", new SqlParameter("@OrderID", orderid)));
             int pagecount = (int)Math.Ceiling(totalcount / Convert.ToDouble(size));//获得页数
 
             if (!string.IsNullOrEmpty(Request.QueryString["p"]))
             {
                 PageIndex = Convert.ToInt32(Request.QueryString["p"]);
             }
+            
             //分页查询
             rptCart.DataSource = SqlHelper.ExecuteDataTable(@"select * from (
-                                                       select c.Userid as UserID,c.ProID, Quantity,ProName,Des,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
-                                                       from t_Cart c left join T_Products p on c.ProID=p.ProID )as s  
-                                                       where  UserID= @UserID and s.num between @Start and @End "
-                                                    , new SqlParameter("@UserID", LoginID)
-                                                    , new SqlParameter("@Start", (PageIndex - 1) * size + 1)
-                                                    , new SqlParameter("@End", PageIndex * size));
+                                                       select o.userid as  UserID ,o.OrderID,o.state, p.ProID, Quantity,ProName,Des,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
+                                                       from OrderDetials c left join T_Orders o on c.OrderID=o.OrderID left join T_Products p on c.ProductID=p.ProID )as s  
+                                                       where  UserID= @UserID and OrderID=@OrderID and s.num between @Start and @End "
+                                                , new SqlParameter("@UserID", LoginID)
+                                                , new SqlParameter("@OrderID", orderid)
+                                                , new SqlParameter("@Start", (PageIndex - 1) * size + 1)
+                                                , new SqlParameter("@End", PageIndex * size));
             //总价
             decimal money = Convert.ToDecimal(SqlHelper.ExecuteScalar(@"select SUM(s.Price*s.Quantity) from(
-                                                                       select c.Userid as UserID, Quantity,ProName,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
-                                                                       from t_Cart c left join T_Products p on c.ProID=p.ProID )as s  
-                                                                       where  UserID= @UserId", new SqlParameter("@UserId", LoginID)));
+                                                                      select o.userid as  UserID ,o.OrderID,o.state, p.ProID, Quantity,ProName,Des,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
+                                                       from OrderDetials c left join T_Orders o on c.OrderID=o.OrderID left join T_Products p on c.ProductID=p.ProID )as s  
+                                                       where  UserID= @UserID and OrderID=@OrderID", new SqlParameter("@UserId", LoginID), new SqlParameter("@OrderID", orderid)));
             ltlTotal.Text = "$" + money;
             SetPage(PageIndex, pagecount);//分页实现
             rptCart.DataBind(); 
@@ -81,28 +84,7 @@ namespace EShop
 
         protected void order_Click(object sender, EventArgs e)
         {
-            DateTime createtime = System.DateTime.Now;
-            string state = "0";
-            SqlHelper.ExecuteNonQuery("insert into T_Orders(UserID,OrderDate,state) values(@UserID,@OrderDate,@state)"
-                        , new SqlParameter("@UserID", LoginID)
-                        , new SqlParameter("@OrderDate", createtime)
-                        , new SqlParameter("@state", state));
-            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
-            foreach (RepeaterItem item in rptCart.Items)
-            {
-                System.Web.UI.WebControls.CheckBox cb = item.FindControl("CheckBox1") as System.Web.UI.WebControls.CheckBox;               
-                if (cb.Checked)
-                {
-                    int id = int.Parse(cb.Attributes["dataID"]);
-                    int Quantity = int.Parse(cb.Attributes["Quantity"]);
-
-                    SqlHelper.ExecuteNonQuery("insert into OrderDetials(OrderID,ProductID,Quantity) values(@OrderID,@ProductID,@Quantity)"
-                        , new SqlParameter("@OrderID", orderid)
-                        , new SqlParameter("@ProductID", id), new SqlParameter("@Quantity", Quantity));
-
-                }              
-
-            }
+           
             Response.Redirect("~/Payment.aspx");
         }
        

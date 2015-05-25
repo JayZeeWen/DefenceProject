@@ -78,5 +78,38 @@ namespace EShop
                 Alert.ShowInTop("用户未登陆");   
             }
         }
+        protected void btnPayment_Click(object sender, EventArgs e)
+        {
+             if (loginUser != null)
+            {
+                if (product != null)
+                {
+                    long LoginID = Convert.ToInt64(Session["LoginUser"]);
+                     DateTime createtime = System.DateTime.Now;
+                     string state = "0";
+                       SqlHelper.ExecuteNonQuery("insert into T_Orders(UserID,OrderDate,state) values(@UserID,@OrderDate,@state)"
+                        , new SqlParameter("@UserID", LoginID)
+                        , new SqlParameter("@OrderDate", createtime)
+                        , new SqlParameter("@state", state));
+                   int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+                     SqlHelper.ExecuteNonQuery("insert into OrderDetials(OrderID,ProductID,Quantity) values(@OrderID,@ProductID,@Quantity)"
+                       , new SqlParameter("@OrderID", orderid)
+                       , new SqlParameter("@ProductID", product.ProID), new SqlParameter("@Quantity", 1));
+                     Response.Redirect("~/CheckOut.aspx");
+                }
+                  else
+                {
+                    Alert.ShowInTop("商品不能为空");
+                }
+            }
+             else
+             {
+                 Alert.ShowInTop("用户未登陆");
+             }
+
+
+
+
+        }
     }
 }

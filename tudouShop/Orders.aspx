@@ -59,7 +59,7 @@
                                 <th class="bg price">商品单价(元)</th>
                                 <th class="qty">数量</th>
                                 <th class="bg subtotal">小计(元)</th>
-                              
+                                <th class="bg subtotal">状态</th>
                                 <th class="close"></th>
                                 <th class="edit"></th>
                             </tr>
@@ -74,8 +74,9 @@
                                         <td class="bg price"><%#Eval("Price") %></td>
                                         <td><%#Eval("Quantity") %></td>
                                         <td class="bg subtotal">$<%#Convert.ToDecimal( Eval("Price")) * Convert.ToDecimal( Eval("Quantity")) %></td>
+                                        <td><%#Eval("state") %></td>
                                         <td class="close"><a title="close" class="close" href="#"></a></td>
-                          
+                                        
                                     </tr>
 
                                 </ItemTemplate>
@@ -89,6 +90,17 @@
                                         <asp:Literal runat="server" ID ="ltlPage"></asp:Literal>
                                     </div>
 
+                                     <div class="grid_4">
+                            <div class="bottom_block total">
+                                <table class="subtotal">
+                                    
+                                    <tr class="grand_total">
+                                        <td>未付款总额</td>
+                                        <td class="price"><asp:Literal runat="server" ID="ltlTotal"></asp:Literal></td>
+                                    </tr>
+                                </table>
+                                <span class="zi8"><a href="CheckOut.aspx">结算</a></span>
+                            </div>
 
 <%--                                    <button class="update"><span>icon</span>保存购物车</button>--%>
                                 </td>
