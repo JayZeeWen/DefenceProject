@@ -291,6 +291,32 @@ namespace EShop.DAL
 		#endregion  BasicMethod
 		#region  ExtensionMethod
 
+        public DataSet GetOrderDataSet(string strWhere, string orderby, int pageIndex, int pageSize)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT * FROM ( ");
+            strSql.Append(" SELECT ROW_NUMBER() OVER (");
+            if (!string.IsNullOrEmpty(orderby.Trim()))
+            {
+                strSql.Append("order by p." + orderby+" desc");
+            }
+            else
+            {
+                strSql.Append("order by p.p.OrderDate desc");
+            }
+            strSql.Append(@")AS Row,p.*,tu.Account,tda.NAME,tda.[Address] AS deliverAddress
+                                                                        FROM T_Orders AS p 
+						                                                LEFT JOIN T_Users AS tu ON P.UserID=tu.UserID
+						                                                LEFT JOIN T_DeliveryAddress AS tda ON tda.id = p.[Address] ");
+            if (!string.IsNullOrEmpty(strWhere.Trim()))
+            {
+                strSql.Append(" WHERE " + strWhere);
+            }
+            strSql.Append(" ) TT");
+            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", pageIndex * pageSize + 1, (pageIndex + 1) * pageSize);
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+
 		#endregion  ExtensionMethod
 	}
 }

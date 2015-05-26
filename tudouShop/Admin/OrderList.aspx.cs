@@ -29,14 +29,30 @@ namespace tudouShop.Admin
 
         private DataTable GetSourceTable()
         {
-            EShop.BLL.T_Products orderBll = new EShop.BLL.T_Products();
-            string condition = " state = 0";
+            EShop.BLL.T_Orders orderBll = new EShop.BLL.T_Orders();
+            string condition = "";
             //获取数据总条数
             Grid1.RecordCount = orderBll.GetRecordCount(condition);
             //获取分页数据
-            DataTable dt = orderBll.GetProducts(condition, "ProID", Grid1.PageIndex, Grid1.PageSize).Tables[0];
+            DataTable dt = orderBll.GetOrderDataSet(condition ,"OrderDate", Grid1.PageIndex, Grid1.PageSize).Tables[0];
 
             return dt;
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Grid1_PageIndexChange(object sender, GridPageEventArgs e)
+        {
+            Grid1.PageIndex = e.NewPageIndex;
+            BindGrid();
+        }
+
+        protected void Grid1_RowCommand(object sender, GridCommandEventArgs e)
+        {
+
         }
     }
 }

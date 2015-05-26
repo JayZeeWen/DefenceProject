@@ -3,6 +3,7 @@ using System.Data;
 using System.Collections.Generic;
 using Maticsoft.Common;
 using EShop.Model;
+using EShop.DAL;
 namespace EShop.BLL
 {
 	/// <summary>
@@ -163,7 +164,11 @@ namespace EShop.BLL
 
 		#endregion  BasicMethod
 		#region  ExtensionMethod
-
+        public DataSet GetOrderDataSet(string strWhere, string orderby, int pageIndex, int pageSize)
+        {
+            return dal.GetOrderDataSet(strWhere, orderby, pageIndex, pageSize);
+ 
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -38,8 +38,7 @@
                             <Toolbars>
                                 <f:Toolbar ID="Toolbar1" runat="server">
                                     <Items>
-                                        <f:Button ID="btnNew" Text="新增订单" Icon="Add" EnablePostBack="false" runat="server">
-                                        </f:Button>
+                                        
                                         <f:ToolbarFill runat="server"></f:ToolbarFill>
                                         <f:Button ID="btnSave" runat="server" Text="保存数据" OnClick="btnSave_Click">
                                         </f:Button>
@@ -49,13 +48,6 @@
                             <Columns>
                                 <f:RowNumberField />
                                 <f:BoundField TextAlign="Center" ColumnID="OrderID" DataField="OrderID"  HeaderText="订单标识"></f:BoundField>
-                                
-                                
-                                
-                                
-                                <f:LinkButtonField HeaderText="&nbsp;" TextAlign="Center" Width="60px" ConfirmText="删除选中行？" ConfirmTarget="Top"
-                                    CommandName="Del" Icon="Delete" />
-                                
                             </Columns>
                         </f:Grid>
                         
