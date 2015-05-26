@@ -82,7 +82,7 @@
                                             <td class="close"><a title="close" class="close" href="#"></a></td>
                                             <td class="edit">
                                                 <a title="Edit" href="javascript:void(0);" onclick="DelProduct(<%#Eval("ProID") %>,this);">删除</a>
-                                                <td><asp:CheckBox ID="CheckBox1" runat="server" dataID='<%#Eval("ProID")%>' Quantity='<%#Eval("Quantity") %>' Checked="true" />操作</td>
+                                                <td><asp:CheckBox ID="CheckBox1" runat="server" dataID='<%#Eval("ProID")%>' Quantity='<%#Eval("Quantity") %>' checked="true" />操作</td>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
