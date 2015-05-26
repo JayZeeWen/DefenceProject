@@ -49,7 +49,7 @@ namespace tudouShop
             int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
             int id = Convert.ToInt32(SqlHelper.ExecuteScalar(@"select Address from T_Orders where OrderID=@OrderID ", new SqlParameter("@OrderID", orderid)));
 
-            rptAddress.DataSource = deliverbll.GetList(1, "", "id");
+            rptAddress.DataSource = deliverbll.GetRowByID(id);
             rptAddress.DataBind();
         }
         public void BindCartDataSource()
