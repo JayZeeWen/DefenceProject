@@ -14,207 +14,231 @@ namespace EShop.DAL
 		{}
 		#region  BasicMethod
 
-		/// <summary>
-		/// 是否存在该记录
-		/// </summary>
-		public bool Exists(long OrderID)
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) from T_Orders");
-			strSql.Append(" where OrderID=@OrderID ");
-			SqlParameter[] parameters = {
-					new SqlParameter("@OrderID", SqlDbType.BigInt,8)			};
-			parameters[0].Value = OrderID;
+        public bool Exists(long OrderID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) from T_Orders");
+            strSql.Append(" where ");
+            strSql.Append(" OrderID = @OrderID  ");
+            SqlParameter[] parameters = {
+					new SqlParameter("@OrderID", SqlDbType.BigInt)
+			};
+            parameters[0].Value = OrderID;
 
-			return DbHelperSQL.Exists(strSql.ToString(),parameters);
-		}
-
-
-		/// <summary>
-		/// 增加一条数据
-		/// </summary>
-		public bool Add(EShop.Model.T_Orders model)
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("insert into T_Orders(");
-			strSql.Append("OrderID,UserID,OrderDate)");
-			strSql.Append(" values (");
-			strSql.Append("@OrderID,@UserID,@OrderDate)");
-			SqlParameter[] parameters = {
-					new SqlParameter("@OrderID", SqlDbType.BigInt,8),
-					new SqlParameter("@UserID", SqlDbType.BigInt,8),
-					new SqlParameter("@OrderDate", SqlDbType.DateTime)};
-			parameters[0].Value = model.OrderID;
-			parameters[1].Value = model.UserID;
-			parameters[2].Value = model.OrderDate;
-
-			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
-			if (rows > 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		/// <summary>
-		/// 更新一条数据
-		/// </summary>
-		public bool Update(EShop.Model.T_Orders model)
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("update T_Orders set ");
-			strSql.Append("UserID=@UserID,");
-			strSql.Append("OrderDate=@OrderDate");
-			strSql.Append(" where OrderID=@OrderID ");
-			SqlParameter[] parameters = {
-					new SqlParameter("@UserID", SqlDbType.BigInt,8),
-					new SqlParameter("@OrderDate", SqlDbType.DateTime),
-					new SqlParameter("@OrderID", SqlDbType.BigInt,8)};
-			parameters[0].Value = model.UserID;
-			parameters[1].Value = model.OrderDate;
-			parameters[2].Value = model.OrderID;
-
-			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
-			if (rows > 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// 删除一条数据
-		/// </summary>
-		public bool Delete(long OrderID)
-		{
-			
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from T_Orders ");
-			strSql.Append(" where OrderID=@OrderID ");
-			SqlParameter[] parameters = {
-					new SqlParameter("@OrderID", SqlDbType.BigInt,8)			};
-			parameters[0].Value = OrderID;
-
-			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
-			if (rows > 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		/// <summary>
-		/// 批量删除数据
-		/// </summary>
-		public bool DeleteList(string OrderIDlist )
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from T_Orders ");
-			strSql.Append(" where OrderID in ("+OrderIDlist + ")  ");
-			int rows=DbHelperSQL.ExecuteSql(strSql.ToString());
-			if (rows > 0)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
+            return DbHelperSQL.Exists(strSql.ToString(), parameters);
+        }
 
 
-		/// <summary>
-		/// 得到一个对象实体
-		/// </summary>
-		public EShop.Model.T_Orders GetModel(long OrderID)
-		{
-			
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 OrderID,UserID,OrderDate from T_Orders ");
-			strSql.Append(" where OrderID=@OrderID ");
-			SqlParameter[] parameters = {
-					new SqlParameter("@OrderID", SqlDbType.BigInt,8)			};
-			parameters[0].Value = OrderID;
 
-			EShop.Model.T_Orders model=new EShop.Model.T_Orders();
-			DataSet ds=DbHelperSQL.Query(strSql.ToString(),parameters);
-			if(ds.Tables[0].Rows.Count>0)
-			{
-				return DataRowToModel(ds.Tables[0].Rows[0]);
-			}
-			else
-			{
-				return null;
-			}
-		}
+        /// <summary>
+        /// 增加一条数据
+        /// </summary>
+        public long Add(EShop.Model.T_Orders model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into T_Orders(");
+            strSql.Append("UserID,OrderDate,Address,state");
+            strSql.Append(") values (");
+            strSql.Append("@UserID,@OrderDate,@Address,@state");
+            strSql.Append(") ");
+            strSql.Append(";select @@IDENTITY");
+            SqlParameter[] parameters = {
+			            new SqlParameter("@UserID", SqlDbType.BigInt,8) ,            
+                        new SqlParameter("@OrderDate", SqlDbType.DateTime) ,            
+                        new SqlParameter("@Address", SqlDbType.BigInt,8) ,            
+                        new SqlParameter("@state", SqlDbType.Char,1)             
+              
+            };
+
+            parameters[0].Value = model.UserID;
+            parameters[1].Value = model.OrderDate;
+            parameters[2].Value = model.Address;
+            parameters[3].Value = model.state;
+
+            object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
+            if (obj == null)
+            {
+                return 0;
+            }
+            else
+            {
+
+                return Convert.ToInt64(obj);
+
+            }
+
+        }
 
 
-		/// <summary>
-		/// 得到一个对象实体
-		/// </summary>
-		public EShop.Model.T_Orders DataRowToModel(DataRow row)
-		{
-			EShop.Model.T_Orders model=new EShop.Model.T_Orders();
-			if (row != null)
-			{
-				if(row["OrderID"]!=null && row["OrderID"].ToString()!="")
-				{
-					model.OrderID=long.Parse(row["OrderID"].ToString());
-				}
-				if(row["UserID"]!=null && row["UserID"].ToString()!="")
-				{
-					model.UserID=long.Parse(row["UserID"].ToString());
-				}
-				if(row["OrderDate"]!=null && row["OrderDate"].ToString()!="")
-				{
-					model.OrderDate=DateTime.Parse(row["OrderDate"].ToString());
-				}
-			}
-			return model;
-		}
+        /// <summary>
+        /// 更新一条数据
+        /// </summary>
+        public bool Update(EShop.Model.T_Orders model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update T_Orders set ");
 
-		/// <summary>
-		/// 获得数据列表
-		/// </summary>
-		public DataSet GetList(string strWhere)
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select OrderID,UserID,OrderDate ");
-			strSql.Append(" FROM T_Orders ");
-			if(strWhere.Trim()!="")
-			{
-				strSql.Append(" where "+strWhere);
-			}
-			return DbHelperSQL.Query(strSql.ToString());
-		}
+            strSql.Append(" UserID = @UserID , ");
+            strSql.Append(" OrderDate = @OrderDate , ");
+            strSql.Append(" Address = @Address , ");
+            strSql.Append(" state = @state  ");
+            strSql.Append(" where OrderID=@OrderID ");
 
-		/// <summary>
-		/// 获得前几行数据
-		/// </summary>
-		public DataSet GetList(int Top,string strWhere,string filedOrder)
-		{
-			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select ");
-			if(Top>0)
-			{
-				strSql.Append(" top "+Top.ToString());
-			}
-			strSql.Append(" OrderID,UserID,OrderDate ");
-			strSql.Append(" FROM T_Orders ");
-			if(strWhere.Trim()!="")
-			{
-				strSql.Append(" where "+strWhere);
-			}
-			strSql.Append(" order by " + filedOrder);
-			return DbHelperSQL.Query(strSql.ToString());
-		}
+            SqlParameter[] parameters = {
+			            new SqlParameter("@OrderID", SqlDbType.BigInt,8) ,            
+                        new SqlParameter("@UserID", SqlDbType.BigInt,8) ,            
+                        new SqlParameter("@OrderDate", SqlDbType.DateTime) ,            
+                        new SqlParameter("@Address", SqlDbType.BigInt,8) ,            
+                        new SqlParameter("@state", SqlDbType.Char,1)             
+              
+            };
+
+            parameters[0].Value = model.OrderID;
+            parameters[1].Value = model.UserID;
+            parameters[2].Value = model.OrderDate;
+            parameters[3].Value = model.Address;
+            parameters[4].Value = model.state;
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool Delete(long OrderID)
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from T_Orders ");
+            strSql.Append(" where OrderID=@OrderID");
+            SqlParameter[] parameters = {
+					new SqlParameter("@OrderID", SqlDbType.BigInt)
+			};
+            parameters[0].Value = OrderID;
+
+
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 批量删除一批数据
+        /// </summary>
+        public bool DeleteList(string OrderIDlist)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from T_Orders ");
+            strSql.Append(" where ID in (" + OrderIDlist + ")  ");
+            int rows = DbHelperSQL.ExecuteSql(strSql.ToString());
+            if (rows > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public EShop.Model.T_Orders GetModel(long OrderID)
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select OrderID, UserID, OrderDate, Address, state  ");
+            strSql.Append("  from T_Orders ");
+            strSql.Append(" where OrderID=@OrderID");
+            SqlParameter[] parameters = {
+					new SqlParameter("@OrderID", SqlDbType.BigInt)
+			};
+            parameters[0].Value = OrderID;
+
+
+            EShop.Model.T_Orders model = new EShop.Model.T_Orders();
+            DataSet ds = DbHelperSQL.Query(strSql.ToString(), parameters);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                if (ds.Tables[0].Rows[0]["OrderID"].ToString() != "")
+                {
+                    model.OrderID = long.Parse(ds.Tables[0].Rows[0]["OrderID"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["UserID"].ToString() != "")
+                {
+                    model.UserID = long.Parse(ds.Tables[0].Rows[0]["UserID"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["OrderDate"].ToString() != "")
+                {
+                    model.OrderDate = DateTime.Parse(ds.Tables[0].Rows[0]["OrderDate"].ToString());
+                }
+                if (ds.Tables[0].Rows[0]["Address"].ToString() != "")
+                {
+                    model.Address = long.Parse(ds.Tables[0].Rows[0]["Address"].ToString());
+                }
+                model.state = ds.Tables[0].Rows[0]["state"].ToString();
+
+                return model;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        /// <summary>
+        /// 获得数据列表
+        /// </summary>
+        public DataSet GetList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * ");
+            strSql.Append(" FROM T_Orders ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
+        /// 获得前几行数据
+        /// </summary>
+        public DataSet GetList(int Top, string strWhere, string filedOrder)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select ");
+            if (Top > 0)
+            {
+                strSql.Append(" top " + Top.ToString());
+            }
+            strSql.Append(" * ");
+            strSql.Append(" FROM T_Orders ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            strSql.Append(" order by " + filedOrder);
+            return DbHelperSQL.Query(strSql.ToString());
+        }
 
 		/// <summary>
 		/// 获取记录总数
@@ -304,7 +328,7 @@ namespace EShop.DAL
             {
                 strSql.Append("order by p.p.OrderDate desc");
             }
-            strSql.Append(@")AS Row,p.*,tu.Account,tda.NAME,tda.[Address] AS deliverAddress
+            strSql.Append(@")AS Row,p.*,tu.Account,tda.NAME,tda.[Address] AS deliverAddress,tda.Phone
                                                                         FROM T_Orders AS p 
 						                                                LEFT JOIN T_Users AS tu ON P.UserID=tu.UserID
 						                                                LEFT JOIN T_DeliveryAddress AS tda ON tda.id = p.[Address] ");

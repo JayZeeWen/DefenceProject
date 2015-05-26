@@ -26,7 +26,7 @@ namespace EShop.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public bool Add(EShop.Model.T_Orders model)
+		public long Add(EShop.Model.T_Orders model)
 		{
 			return dal.Add(model);
 		}
@@ -102,35 +102,35 @@ namespace EShop.BLL
 		{
 			return dal.GetList(Top,strWhere,filedOrder);
 		}
-		/// <summary>
-		/// 获得数据列表
-		/// </summary>
-		public List<EShop.Model.T_Orders> GetModelList(string strWhere)
-		{
-			DataSet ds = dal.GetList(strWhere);
-			return DataTableToList(ds.Tables[0]);
-		}
-		/// <summary>
-		/// 获得数据列表
-		/// </summary>
-		public List<EShop.Model.T_Orders> DataTableToList(DataTable dt)
-		{
-			List<EShop.Model.T_Orders> modelList = new List<EShop.Model.T_Orders>();
-			int rowsCount = dt.Rows.Count;
-			if (rowsCount > 0)
-			{
-				EShop.Model.T_Orders model;
-				for (int n = 0; n < rowsCount; n++)
-				{
-					model = dal.DataRowToModel(dt.Rows[n]);
-					if (model != null)
-					{
-						modelList.Add(model);
-					}
-				}
-			}
-			return modelList;
-		}
+        ///// <summary>
+        ///// 获得数据列表
+        ///// </summary>
+        //public List<EShop.Model.T_Orders> GetModelList(string strWhere)
+        //{
+        //    DataSet ds = dal.GetList(strWhere);
+        //    return DataTableToList(ds.Tables[0]);
+        //}
+        ///// <summary>
+        ///// 获得数据列表
+        ///// </summary>
+        //public List<EShop.Model.T_Orders> DataTableToList(DataTable dt)
+        //{
+        //    List<EShop.Model.T_Orders> modelList = new List<EShop.Model.T_Orders>();
+        //    int rowsCount = dt.Rows.Count;
+        //    if (rowsCount > 0)
+        //    {
+        //        EShop.Model.T_Orders model;
+        //        for (int n = 0; n < rowsCount; n++)
+        //        {
+        //            model = dal.DataRowToModel(dt.Rows[n]);
+        //            if (model != null)
+        //            {
+        //                modelList.Add(model);
+        //            }
+        //        }
+        //    }
+        //    return modelList;
+        //}
 
 		/// <summary>
 		/// 获得数据列表
@@ -166,7 +166,26 @@ namespace EShop.BLL
 		#region  ExtensionMethod
         public DataSet GetOrderDataSet(string strWhere, string orderby, int pageIndex, int pageSize)
         {
-            return dal.GetOrderDataSet(strWhere, orderby, pageIndex, pageSize);
+            DataSet ds = dal.GetOrderDataSet(strWhere, orderby, pageIndex, pageSize);
+            ds.Tables[0].Columns.Add("c_state");
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                if (dr["state"].ToString() == "0" )
+                {
+                    dr["c_state"] = "未付款";
+                }
+                else if (dr["state"].ToString() == "1")
+                {
+                    dr["c_state"] = "未发货";
+                }
+                else if (dr["state"].ToString() == "2")
+                {
+                    dr["c_state"] = "已发货";
+                }
+            }
+
+
+            return ds;
  
         }
 		#endregion  ExtensionMethod

@@ -28,6 +28,8 @@
                     <Items>
                         <f:HyperLink NavigateUrl="~/admin/ProductList.aspx" runat="server" Text="商品管理"></f:HyperLink>
                         <f:HyperLink NavigateUrl="~/admin/userlist.aspx" runat="server" Text="会员管理"></f:HyperLink>
+                        <f:HyperLink NavigateUrl="~/admin/OrderList.aspx" runat="server" Text="订单管理"></f:HyperLink>
+
                     </Items>
                 </f:Panel>
                 <f:Panel runat="server" ID="panelCenterRegion" RegionPosition="Center" ShowBorder="true" BodyPadding="5px" Title=" ">
@@ -49,7 +51,7 @@
                             <Columns>
                                 <f:RowNumberField />
                                 <f:RenderField Width="260px" TextAlign="Center" ColumnID="ProName" DataField="ProName" FieldType="String"
-                                    HeaderText="商品名称">
+                                    HeaderText="商品名称" ExpandUnusedSpace="true">
                                     <Editor>
                                         <f:TextBox ID="txtProName" Required="true" runat="server">
                                         </f:TextBox>

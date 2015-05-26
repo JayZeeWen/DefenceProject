@@ -37,6 +37,25 @@ namespace EShop.Model
 			set{ _orderdate=value;}
 			get{return _orderdate;}
 		}
+
+        /// <summary>
+        /// Address
+        /// </summary>		
+        private long _address;
+        public long Address
+        {
+            get { return _address; }
+            set { _address = value; }
+        }
+        /// <summary>
+        /// state
+        /// </summary>		
+        private string _state;
+        public string state
+        {
+            get { return _state; }
+            set { _state = value; }
+        }   
 		#endregion Model
 
 	}

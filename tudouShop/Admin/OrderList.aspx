@@ -48,6 +48,13 @@
                             <Columns>
                                 <f:RowNumberField />
                                 <f:BoundField TextAlign="Center" ColumnID="OrderID" DataField="OrderID"  HeaderText="订单标识"></f:BoundField>
+                                <f:BoundField TextAlign="Center" ColumnID="Account" DataField="Account"  HeaderText="订单用户" Width="150px"></f:BoundField>
+                                <f:BoundField TextAlign="Center" ColumnID="OrderDate" DataField="OrderDate"  HeaderText="订单日期" Width="150px"></f:BoundField>
+                                <f:BoundField TextAlign="Center" ColumnID="NAME" DataField="NAME"  HeaderText="收件人"></f:BoundField>
+                                <f:BoundField TextAlign="Center" ColumnID="deliverAddress" DataField="deliverAddress"  HeaderText="收件地址"></f:BoundField>
+                                <f:BoundField TextAlign="Center" ColumnID="Phone" DataField="Phone"  HeaderText="联系电话"></f:BoundField>
+                                <f:RenderField TextAlign="Center" ColumnID="c_state" DataField="c_state"  HeaderText="订单状态" ExpandUnusedSpace="true" RendererFunction="renderState"></f:RenderField>
+                                <f:RenderField TextAlign="Center"  ColumnID="OrderID" DataField="OrderID" RendererFunction="renderDelivery"></f:RenderField>
                             </Columns>
                         </f:Grid>
                         
@@ -60,9 +67,12 @@
         </f:Panel>
     </form>
     <script>
-        function renderType(value) {
-            var tid = value;
-            return EShop.ProductList.getTypeName(tid).value;
+        function renderState(value) {
+            if (value == "未发货") {
+                return "<span><image src='../res/icon/exclamation.png' onclick='Delive()'></image></span>" + value;                
+            } else {
+                return value;
+            }
         }
         function renderBrand(value) {
             var bid = value;
@@ -72,6 +82,20 @@
         function renderMoney(value) {
             var money = "$ " + value;
             return money;
+        }
+
+        function renderDelivery(value) {
+            var rowid = value;
+            var html = tudouShop.Admin.OrderList.BuildHtml(rowid);
+            return html;
+        }
+
+        function Delive() {
+            if (confirm("确认发货？")) {
+                tudouShop.Admin.OrderList.Delive();
+                alert("发货成功");
+            }
+
         }
 
     </script>
