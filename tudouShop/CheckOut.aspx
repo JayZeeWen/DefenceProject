@@ -50,10 +50,11 @@
                     <asp:Repeater runat="server" ID="rptAddress">
                         <ItemTemplate>
                             <div class="one-fourth">
-                                <div class="iconbox">
-                                    <a href="javascript:void(0)" onclick="SelectAddress(this)">
-                                        <h3 class="iconbox-title"><span class="iconbox-icon"></span><%#Eval("Name") %></h3>
+                                <div class="iconbox" >
+                                    <a href="javascript:void(0)" onclick="SelectAddress(this,<%#Eval("id") %>)">
+                                        <h3 class="iconbox-title"><span class="iconbox-icon" ></span><%#Eval("Name") %></h3>
                                         <p><%#Eval("Address") %></p>
+                                       
                                     </a>
                                 </div>
                             </div>
@@ -62,7 +63,7 @@
 
                 </div>
 
-
+              <input  type="hidden" id="code" name="code" />
 
                 <div class="container_12">
                     <div class="grid_12">
@@ -207,11 +208,12 @@
             </div>
         </div>
         <script type="text/javascript">
-            function SelectAddress(d) {
+            function SelectAddress(d,id) {
                 var div = d.parentElement;
                 $('#DivAddress').find("div").removeClass("iconone").addClass("iconbox");
-                $(div).removeClass().addClass("iconone");
-                alert(cs);
+                $(div).removeClass().addClass("iconone");              
+                $('#code').val(id);
+                
             }
 
             function showtips() {

@@ -46,6 +46,9 @@ namespace tudouShop
         public void BindAddressDataSource()
         {
             EShop.BLL.T_DeliveryAddress deliverbll = new T_DeliveryAddress();
+            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+            int id = Convert.ToInt32(SqlHelper.ExecuteScalar(@"select Address from T_Orders where OrderID=@OrderID ", new SqlParameter("@OrderID", orderid)));
+
             rptAddress.DataSource = deliverbll.GetList(1, "", "id");
             rptAddress.DataBind();
         }

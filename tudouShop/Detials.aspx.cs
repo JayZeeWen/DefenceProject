@@ -87,7 +87,10 @@ namespace EShop
             {
                 if (product != null)
                 {
+
                     long LoginID = Convert.ToInt64(Session["LoginUser"]);
+                    string quantity = Request.Params.GetValues("txtquantity")[0];
+                    int quan = Convert.ToInt32(quantity);
                      DateTime createtime = System.DateTime.Now;
                      string state = "0";
                        SqlHelper.ExecuteNonQuery("insert into T_Orders(UserID,OrderDate,state) values(@UserID,@OrderDate,@state)"
@@ -97,7 +100,7 @@ namespace EShop
                    int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
                      SqlHelper.ExecuteNonQuery("insert into OrderDetials(OrderID,ProductID,Quantity) values(@OrderID,@ProductID,@Quantity)"
                        , new SqlParameter("@OrderID", orderid)
-                       , new SqlParameter("@ProductID", product.ProID), new SqlParameter("@Quantity", 1));
+                       , new SqlParameter("@ProductID", product.ProID), new SqlParameter("@Quantity", quan));
                      Response.Redirect("~/CheckOut.aspx");
                 }
                   else

@@ -84,7 +84,10 @@ namespace EShop
 
         protected void order_Click(object sender, EventArgs e)
         {
-           
+            int id = int.Parse(Context.Request["code"]);
+            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+            SqlHelper.ExecuteScalar(@"update T_Orders set Address=@Address where  OrderID= @OrderID"
+                                                 , new SqlParameter("@Address", id), new SqlParameter("@OrderID", orderid)); 
             Response.Redirect("~/Payment.aspx");
         }
        
