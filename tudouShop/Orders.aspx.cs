@@ -60,18 +60,21 @@ namespace tudouShop
                                                 , new SqlParameter("@UserID", LoginID)
                                                 , new SqlParameter("@Start", (PageIndex - 1) * size + 1)
                                                 , new SqlParameter("@End", PageIndex * size));
-           
+
+            data.Columns.Add("icon");
             foreach (DataRow dr in data.Rows)
               {
                   switch (dr["state"].ToString())
                   {
                       case "0": dr["state"] = "未付款";
+                          dr["icon"] = "<span><image src='res/icon/exclamation.png' onclick='pay("+dr["OrderID"].ToString()+")'></image></span>";
                           break;
                       case "1": dr["state"] = "未发货";
+                          dr["icon"] = "";
                           break;
                       case "2": dr["state"] = "已发货";
+                          dr["icon"] = "";
                           break;
-
                   }
               }
            

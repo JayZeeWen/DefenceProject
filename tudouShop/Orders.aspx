@@ -6,9 +6,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ANRUI International | login</title>
-    <link href="css/gouwuchexin.css" rel='stylesheet' type='text/css' />
+    <link href="css/gouwuche.css" rel='stylesheet' type='text/css' />
     <link href="css/grid.css" rel='stylesheet' type='text/css' />
     <script src="js/jquery.js"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <script src="scripts/Common.js"></script>
+    <script src="scripts/jquery-ui.js"></script>  
 </head>
 <body>
     <form id="form1" runat="server">
@@ -68,13 +71,13 @@
                                     <tr>
                                         <td class="images"><a href="sp.html">
                                             <img src="<%#Eval("Img") %>" alt="Product 6"></a></td>
-                                        <td class="bg name"><%#Eval("ProName") %><br />
+                                        <td class="bg name"><strong style="font-size:14px; font-weight:bold"><%#Eval("ProName") %></strong><br />
                                             <%#Eval("des") %></td>
 
                                         <td class="bg price"><%#Eval("Price") %></td>
                                         <td><%#Eval("Quantity") %></td>
                                         <td class="bg subtotal">$<%#Convert.ToDecimal( Eval("Price")) * Convert.ToDecimal( Eval("Quantity")) %></td>
-                                        <td><%#Eval("state") %></td>
+                                        <td><%#Eval("icon") %><%#Eval("state") %></td>
                                         <td class="close"><a title="close" class="close" href="#"></a></td>
                                         
                                     </tr>
@@ -198,6 +201,13 @@
                 if (confirm("未发现登陆账户，请先登陆")) {
                     window.navigate("aspx/login.aspx");
                 }
+            }
+
+            function pay(id) {
+                if (confirmL("确定要付款？", function () {
+                    window.navigate("checkout.aspx?id=" + id);
+                }))
+                { }
             }
     </script>
     </form>
