@@ -217,9 +217,10 @@
             }
 
             function showtips() {
-                if (confirm("未发现登陆账户，请先登陆")) {
+                if (confirmL("未发现登陆账户，请先登陆", function () {
                     window.navigate("aspx/login.aspx");
-                }
+                    return true;
+                })) { }
             }
     </script>
     </form>
