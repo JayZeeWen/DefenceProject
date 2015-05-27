@@ -326,7 +326,7 @@ namespace EShop.DAL
             }
             else
             {
-                strSql.Append("order by p.p.OrderDate desc");
+                strSql.Append("order by p.OrderDate desc");
             }
             strSql.Append(@")AS Row,p.*,tu.Account,tda.NAME,tda.[Address] AS deliverAddress,tda.Phone
                                                                         FROM T_Orders AS p 
@@ -341,6 +341,49 @@ namespace EShop.DAL
             return DbHelperSQL.Query(strSql.ToString());
         }
 
+
+        public DataSet GetOrderDetailsDataSet(string strWhere, string orderby, int pageIndex, int pageSize)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT * FROM ( ");
+            strSql.Append(" SELECT ROW_NUMBER() OVER (");
+            if (!string.IsNullOrEmpty(orderby.Trim()))
+            {
+                strSql.Append("order by " + orderby );
+            }
+            else
+            {
+                strSql.Append("order by ItemID ");
+            }
+            strSql.Append(@")AS Row,od.*,p.ProName,p.Price
+  				                                FROM OrderDetials AS od LEFT JOIN t_products AS p ON od.ProductID=p.ProID ");
+            if (!string.IsNullOrEmpty(strWhere.Trim()))
+            {
+                strSql.Append(" WHERE " + strWhere);
+            }
+            strSql.Append(" ) TT");
+            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", pageIndex * pageSize + 1, (pageIndex + 1) * pageSize);
+            return DbHelperSQL.Query(strSql.ToString());
+        }
+
+        public int GetDetailsCount(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select count(1) FROM OrderDetials AS od ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            object obj = DbHelperSQL.GetSingle(strSql.ToString());
+            if (obj == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return Convert.ToInt32(obj);
+            }
+        }
 		#endregion  ExtensionMethod
 	}
 }

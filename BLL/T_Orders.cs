@@ -188,6 +188,16 @@ namespace EShop.BLL
             return ds;
  
         }
+
+        public DataSet GetOrderDetailsDataSet(string strWhere, string orderby, int pageIndex, int pageSize)
+        {
+            return dal.GetOrderDetailsDataSet(strWhere, orderby, pageIndex, pageSize);
+        }
+
+        public int GetDetailsCount(string strWhere)
+        {
+            return dal.GetDetailsCount(strWhere);
+        }
 		#endregion  ExtensionMethod
 	}
 }

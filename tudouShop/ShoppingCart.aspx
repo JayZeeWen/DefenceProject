@@ -8,9 +8,9 @@
     <link href="css/gouwuche.css" rel='stylesheet' type='text/css' />
     <link href="css/grid.css" rel='stylesheet' type='text/css' />
     <script src="js/jquery.js"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet" />
     <script src="scripts/Common.js"></script>
-    <script src="scripts/jquery-ui.js"></script>
-
+    <script src="scripts/jquery-ui.js"></script>    
     <meta charset="utf-8">
 </head>
 
@@ -339,6 +339,7 @@
                 var price = str * d.value;
                 d.parentElement.parentElement.cells[4].innerHTML = "$" + fmoney(price, 2);
                 submit(d.value, proid);
+                
             }
 
             function submit(quantity, proid) {

@@ -55,6 +55,11 @@ namespace tudouShop.Admin
 
         }
 
+        protected string GetEditUrl(object id, object name)
+        {
+            return InfoWindows.GetShowReference("OrderInfo.aspx?id=" + id, "编辑 - " + name);
+        }
+
         private DataRow FindRowByID(int rowID)
         {
             DataTable table = GetSourceTable();
@@ -73,23 +78,9 @@ namespace tudouShop.Admin
         {
             EShop.BLL.T_Orders orderbll = new EShop.BLL.T_Orders ();
             EShop.Model.T_Orders order = orderbll.GetModel(id);
-            order.state = "1";
+            order.state = "2";
             orderbll.Update(order);
         }
 
-        [AjaxPro.AjaxMethod]
-        public string BuildHtml(int rowid)
-        {
-            DataRow row = FindRowByID(rowid);
-            string state = row["c_state"].ToString();
-            if (state == "未发货")
-            {
-                return "<a href='#' onclik='delivery(" + rowid + ")'>发货</a>";
-            }
-            else
-            {
-                return "";
-            }
-        }
     }
 }

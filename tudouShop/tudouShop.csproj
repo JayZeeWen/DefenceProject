@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AdminLogin.aspx" />
+    <Content Include="Admin\OrderInfo.aspx" />
     <Content Include="Admin\OrderList.aspx" />
     <Content Include="Admin\ProductInfo.aspx" />
     <Content Include="Admin\ProductList.aspx" />
@@ -96,6 +97,8 @@
     <Content Include="css\gouwuchexin.css" />
     <Content Include="css\grid.css" />
     <Content Include="css\gwc.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.ui.all.css" />
     <Content Include="css\login.css" />
     <Content Include="css\nanshi.css" />
     <Content Include="css\nvshi.css" />
@@ -771,7 +774,11 @@
     <Content Include="images\男士\3.jpg" />
     <Content Include="js\base.js" />
     <Content Include="js\gdt.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.dialog.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.ui.accordion.js" />
+    <Content Include="js\jquery.ui.tabs.js" />
     <Content Include="js\scrollImg.js" />
     <Content Include="Orders.aspx" />
     <Content Include="Payment.aspx" />
@@ -1036,6 +1043,13 @@
     </Compile>
     <Compile Include="Admin\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderInfo.aspx.cs">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderInfo.aspx.designer.cs">
+      <DependentUpon>OrderInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\OrderList.aspx.cs">
       <DependentUpon>OrderList.aspx</DependentUpon>
