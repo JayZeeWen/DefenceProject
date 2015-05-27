@@ -14,6 +14,7 @@ namespace EShop
 {
     public partial class ShoppingCart :System.Web.UI.Page
     {
+        //登陆用户
         long x;
         public long LoginID
         {
