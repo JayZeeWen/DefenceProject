@@ -45,9 +45,21 @@ namespace EShop
 
         public void BindAddressDataSource()
         {
-            BLL.T_DeliveryAddress deliverbll = new T_DeliveryAddress();
-            rptAddress.DataSource = deliverbll.GetList(4, "", "id");
-            rptAddress.DataBind(); 
+            if (LoginID != 0)
+            {
+                string strwhere = "UserID = " + LoginID.ToString();
+                BLL.T_DeliveryAddress deliverbll = new T_DeliveryAddress();
+                DataTable dt = deliverbll.GetList(4, strwhere, "id").Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    rptAddress.DataSource = dt;
+                    rptAddress.DataBind();
+                }
+                else
+                {
+                    
+                }
+            }
         }
 
         public void BindCartDataSource()
@@ -84,11 +96,19 @@ namespace EShop
 
         protected void order_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(Context.Request["code"]);
-            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
-            SqlHelper.ExecuteScalar(@"update T_Orders set Address=@Address where  OrderID= @OrderID"
-                                                 , new SqlParameter("@Address", id), new SqlParameter("@OrderID", orderid)); 
-            Response.Redirect("~/Payment.aspx");
+            if (!string.IsNullOrEmpty(Context.Request["code"]))
+            {
+                int id = int.Parse(Context.Request["code"]);
+                int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+                SqlHelper.ExecuteScalar(@"update T_Orders set Address=@Address where  OrderID= @OrderID"
+                                                     , new SqlParameter("@Address", id), new SqlParameter("@OrderID", orderid));
+                Response.Redirect("~/Payment.aspx");
+            }
+            else
+            {
+                Alert.ShowInTop("未选择收货地址");
+            }
+            
         }
        
         public void nullsession()

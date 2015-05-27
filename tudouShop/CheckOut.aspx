@@ -128,7 +128,7 @@
                                         <td class="price"><asp:Literal runat="server" ID="ltlTotal"></asp:Literal></td>
                                     </tr>
                                 </table>
-                                <span class="zi8"><asp:Button ID="order" runat="server" OnClick="order_Click" Text="提交订单" /></span>
+                                <asp:Button ID="order" runat="server" OnClick="order_Click" Text="提交订单" CssClass="zi8" />
                                <%-- <span class="zi8" onclick="order_Click"><a href="Payment.aspx">提交订单</a></span>--%>
                             </div>
                             <!-- .total -->
