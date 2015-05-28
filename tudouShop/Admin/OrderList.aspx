@@ -137,7 +137,7 @@
         function Delive(id) {
             if (confirmL("确认发货？", function () {
                 tudouShop.Admin.OrderList.Delive(id);
-                
+                alert("发货成功");
                 location.reload();
             })) {
 

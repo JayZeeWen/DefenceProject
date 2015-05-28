@@ -170,18 +170,18 @@ namespace EShop.BLL
             ds.Tables[0].Columns.Add("c_state");
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (dr["state"].ToString() == "0" )
+                switch (dr["state"].ToString())
                 {
-                    dr["c_state"] = "未付款";
+                    case "0": 
+                        dr["c_state"] = "未付款"; break;
+                    case "1": 
+                        dr["c_state"] = "未发货"; break;
+                    case "2": 
+                        dr["c_state"] = "已发货";break;
+                    case "3": 
+                        dr["c_state"] = "已签收"; break;
                 }
-                else if (dr["state"].ToString() == "1")
-                {
-                    dr["c_state"] = "未发货";
-                }
-                else if (dr["state"].ToString() == "2")
-                {
-                    dr["c_state"] = "已发货";
-                }
+                
             }
 
 

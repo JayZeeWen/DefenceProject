@@ -94,16 +94,7 @@
                                     </div>
 
                                      <div class="grid_4">
-                            <div class="bottom_block total">
-                                <table class="subtotal">
-                                    
-                                    <tr class="grand_total">
-                                        <td>未付款总额</td>
-                                        <td class="price"><asp:Literal runat="server" ID="ltlTotal"></asp:Literal></td>
-                                    </tr>
-                                </table>
-                                <span class="zi8"><a href="CheckOut.aspx">结算</a></span>
-                            </div>
+                            
 
 <%--                                    <button class="update"><span>icon</span>保存购物车</button>--%>
                                 </td>
@@ -205,10 +196,21 @@
 
             function pay(id) {
                 if (confirmL("确定要付款？", function () {
-                    window.navigate("checkout.aspx?id=" + id);
+                    window.navigate("checkout.aspx?t=2&id=" + id);
                 }))
                 { }
             }
+
+            function check(id) {
+                if (confirmL("确定要签收，签收后货款会由第三方平台转到商城？", function () {
+                    tudouShop.Orders.check(id);
+                    showInfo("签收成功");
+                    location.reload();
+                }))
+                {
+                }
+            }
+
     </script>
     </form>
     

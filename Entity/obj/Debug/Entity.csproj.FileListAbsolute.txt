@@ -31,3 +31,8 @@ D:\GitHub\DefenceProject\Entity\bin\Debug\Entity.dll
 D:\GitHub\DefenceProject\Entity\bin\Debug\Entity.pdb
 D:\GitHub\DefenceProject\Entity\obj\Debug\Entity.dll
 D:\GitHub\DefenceProject\Entity\obj\Debug\Entity.pdb
+C:\Users\wenjun.zhang\Desktop\DefenceProject\Entity\bin\Debug\Entity.dll
+C:\Users\wenjun.zhang\Desktop\DefenceProject\Entity\bin\Debug\Entity.pdb
+C:\Users\wenjun.zhang\Desktop\DefenceProject\Entity\obj\Debug\Entity.dll
+C:\Users\wenjun.zhang\Desktop\DefenceProject\Entity\obj\Debug\Entity.pdb
+C:\Users\wenjun.zhang\Desktop\DefenceProject\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache

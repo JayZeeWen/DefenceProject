@@ -230,7 +230,8 @@
                                         <span class="newsletter">
                                             <input type="submit" id="submit2" value="添加" />
                                         </span>
-                                        <input type="text" name="txtquantity" class="number" value="1" />
+                                        <%--<f:NumberBox runat="server" ID="txtquantity" Required="true" CssClass="number"></f:NumberBox>--%>
+                                        <input type="text" name="txtquantity" class="number validate[required,custom[number]]" value="1" />
                                         <span>添加商品数量:</span>
                                     </div>
                                     <div class="clear"></div>

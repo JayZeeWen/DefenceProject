@@ -46,3 +46,8 @@ D:\GitHub\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
 D:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
 D:\GitHub\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
 F:\GitHub\DefenceProject\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache
+C:\Users\wenjun.zhang\Desktop\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.dll
+C:\Users\wenjun.zhang\Desktop\DefenceProject\DBUtility\bin\Debug\Maticsoft.DBUtility.pdb
+C:\Users\wenjun.zhang\Desktop\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.dll
+C:\Users\wenjun.zhang\Desktop\DefenceProject\DBUtility\obj\Debug\Maticsoft.DBUtility.pdb
+C:\Users\wenjun.zhang\Desktop\DefenceProject\DBUtility\obj\Debug\DBUtility.csprojResolveAssemblyReference.cache

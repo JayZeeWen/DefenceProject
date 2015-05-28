@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using 土豆购物;
+using EShop.Model;
+using EShop.BLL;
 
 namespace tudouShop
 {
@@ -30,7 +32,7 @@ namespace tudouShop
         } 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(Orders));           
             if (LoginID != 0)
             {
                 
@@ -73,7 +75,9 @@ namespace tudouShop
                           dr["icon"] = "";
                           break;
                       case "2": dr["state"] = "已发货";
-                          dr["icon"] = "";
+                          dr["icon"] = "<span><image src='res/icon/exclamation.png' onclick='check(" + dr["OrderID"].ToString() + ")'></image></span>";
+                          break;
+                      case "3": dr["state"] = "已签收";
                           break;
                   }
               }
@@ -82,18 +86,7 @@ namespace tudouShop
 
             
             DataTable dt = SqlHelper.ExecuteDataTable(@"select Quantity from t_Cart where UserID=@UserID", new SqlParameter("@UserID", LoginID));
-            if (dt.Rows.Count != 0)
-              {
-                  decimal money = Convert.ToDecimal(SqlHelper.ExecuteScalar(@"select SUM(s.Price*s.Quantity) from(
-                                                                       select c.Userid as UserID, Quantity,ProName,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
-                                                                       from t_Cart c left join T_Products p on c.ProID=p.ProID )as s  
-                                                                       where  UserID= @UserId", new SqlParameter("@UserId", LoginID)));
-                  ltlTotal.Text = "$" + money;
-              }
-              else
-              {
-                  ltlTotal.Text = "$" +0;
-              }
+            
            
             SetPage(PageIndex, pagecount);//分页实现
             rptorders.DataBind(); 
@@ -126,5 +119,16 @@ namespace tudouShop
 
         }
         #endregion
+
+
+        //签收商品
+        [AjaxPro.AjaxMethod]
+        public void check(int id)
+        {
+            EShop.BLL.T_Orders logic = new EShop.BLL.T_Orders();
+            EShop.Model.T_Orders order = logic.GetModel(id);
+            order.state = "3";
+            logic.Update(order);
+        }
     }
 }

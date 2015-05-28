@@ -15,6 +15,38 @@ namespace EShop
 {
     public partial class CheckOut : System.Web.UI.Page
     {
+        //1:直接提交  2：间接提交
+        public int type
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Request.QueryString["t"]))
+                {
+                    return Convert.ToInt32(Request.QueryString["t"]);
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+        }
+
+        public int orderId
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+                {
+                    return Convert.ToInt32(Request.QueryString["id"]);
+                }
+                else
+                {
+                    return 0;
+                }
+
+            }
+        }
+
         long x;
         public long LoginID
         {
@@ -64,7 +96,15 @@ namespace EShop
 
         public void BindCartDataSource()
         {
-            int orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+            int orderid;
+            if (type == 2)
+            {
+                orderid = orderId;
+            }
+            else
+            {
+                orderid = Convert.ToInt32(SqlHelper.ExecuteScalar(@"SELECT IDENT_CURRENT('T_Orders')"));
+            }
             int size = 5;
             int PageIndex = 1;
             int totalcount = Convert.ToInt32(SqlHelper.ExecuteScalar("select COUNT(*) from  OrderDetials where OrderID=@OrderID", new SqlParameter("@OrderID", orderid)));
@@ -78,8 +118,9 @@ namespace EShop
             //分页查询
             rptCart.DataSource = SqlHelper.ExecuteDataTable(@"select * from (
                                                        select o.userid as  UserID ,o.OrderID,o.state, p.ProID, Quantity,ProName,Des,Price,Img ,ROW_NUMBER() over (order by p.ProID asc) as num
-                                                       from OrderDetials c left join T_Orders o on c.OrderID=o.OrderID left join T_Products p on c.ProductID=p.ProID )as s  
-                                                       where  UserID= @UserID and OrderID=@OrderID and s.num between @Start and @End "
+                                                       from OrderDetials c left join T_Orders o on c.OrderID=o.OrderID left join T_Products p on c.ProductID=p.ProID 
+                                                        where  UserID= @UserID and c.OrderID=@OrderID  )as s  
+                                                       where s.num between @Start and @End "
                                                 , new SqlParameter("@UserID", LoginID)
                                                 , new SqlParameter("@OrderID", orderid)
                                                 , new SqlParameter("@Start", (PageIndex - 1) * size + 1)

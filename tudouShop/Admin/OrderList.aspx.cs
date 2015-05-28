@@ -80,7 +80,7 @@ namespace tudouShop.Admin
             EShop.Model.T_Orders order = orderbll.GetModel(id);
             order.state = "2";
             orderbll.Update(order);
-            Alert.ShowInTop("发货成功");
+            
         }
 
     }
